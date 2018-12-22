@@ -1,0 +1,40 @@
+﻿<Grid x:Class="DGP_Snap.Views.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DGP_Snap.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="432">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel>
+                <TextBlock
+                Text="设置"
+                Style="{StaticResource TitleTextBlockStyle}"
+                    Margin="0,16"/>
+                <StackPanel Margin="{StaticResource EightTopMargin}">
+                    
+                    <TextBlock
+                        Text="背景"
+                        Style="{StaticResource SubtitleTextBlockStyle}"/>
+                    <StackPanel Margin="{StaticResource EightTopMargin}">
+                        <RadioButton x:Name="WallPaperOnRadioButton" Content="壁纸" IsChecked="True" GroupName="BackgroundTypeGroup" Foreground="White" Style="{DynamicResource DefaultRadioButton}" />
+                        
+                        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="切换时间" Margin="16,8,0,0"/>
+                        <ComboBox Margin="16,8,0,0" Width="240" HorizontalAlignment="Left" ></ComboBox>
+                        <RadioButton Content="联机" IsChecked="True" IsEnabled="{Binding ElementName=WallPaperOnRadioButton,Path=IsChecked}" GroupName="WallPaperLocationTypeGroup" Foreground="White" Margin="16,8,0,0" Style="{DynamicResource DefaultRadioButton}"/>
+                        <RadioButton Content="本地" IsEnabled="{Binding ElementName=WallPaperOnRadioButton,Path=IsChecked}" GroupName="WallPaperLocationTypeGroup" Foreground="White" Margin="16,8,0,0" Style="{DynamicResource DefaultRadioButton}"/>
+                        
+                        <RadioButton IsChecked="False" Content="纯黑" GroupName="BackgroundTypeGroup" Foreground="White" Style="{DynamicResource DefaultRadioButton}" Margin="0,8" />
+                    </StackPanel>
+                    
+                    <TextBlock
+                        Text="效果"
+                        Style="{StaticResource SubtitleTextBlockStyle}"/>
+                    
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Grid>
