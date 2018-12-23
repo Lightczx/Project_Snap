@@ -106,6 +106,9 @@
     <Compile Include="Models\CityInformation.cs" />
     <Compile Include="Models\WallPaperQueryData.cs" />
     <Compile Include="Models\WeatherInformation.cs" />
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\MottoService.cs" />
     <Compile Include="Service\SystemTimeHost.cs" />
     <Compile Include="Service\WallPaperService.cs" />
@@ -131,6 +134,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Animations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
