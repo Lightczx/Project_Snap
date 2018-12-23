@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DGP_Snap.Views.Control
+namespace DGPCore
 {
     /// <summary>
-    /// NavigationView.xaml 的交互逻辑
+    /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class NavigationView : UserControl
+    public partial class MainWindow : Window
     {
-        public NavigationView()
+        public MainWindow()
         {
             InitializeComponent();
         }

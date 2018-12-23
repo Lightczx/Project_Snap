@@ -113,9 +113,6 @@
     <Compile Include="Service\SystemTimeHost.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />
-    <Compile Include="Views\Control\NavigationView.xaml.cs">
-      <DependentUpon>NavigationView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SettingView.xaml.cs">
       <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
@@ -147,10 +144,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Control\NavigationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -279,7 +272,7 @@
     <Resource Include="Resources\Assets\6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\NoisyTexture.png" />
+    <Folder Include="Views\Control\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
