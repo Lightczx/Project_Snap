@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{5E6993CE-1E00-4378-81E8-C9E293363657}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>MahApps.Metro</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\PresentationFramework\v4.0_4.0.0.0__31bf3856ad364e35\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xaml\v4.0_4.0.0.0__b77a5c561934e089\System.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\WindowsBase\v4.0_4.0.0.0__31bf3856ad364e35\WindowsBase.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_32\PresentationCore\v4.0_4.0.0.0__31bf3856ad364e35\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx">
+      <HintPath>D:\搜狗高速下载\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MahApps.Metro.Actions\CloseFlyoutAction.cs" />
+    <Compile Include="MahApps.Metro.Actions\CloseTabItemAction.cs" />
+    <Compile Include="MahApps.Metro.Actions\CommandTriggerAction.cs" />
+    <Compile Include="MahApps.Metro.Actions\SetFlyoutOpenAction.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\BindableResourceBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\BorderlessWindowBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\DatePickerTextBoxBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\GlowWindowBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\PasswordBoxBindingBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\ReloadBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\StylizedBehaviorCollection.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\StylizedBehaviors.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\TabControlSelectFirstVisibleTabBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\TiltBehavior.cs" />
+    <Compile Include="MahApps.Metro.Behaviours\WindowsSettingBehaviour.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\BaseMetroDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\CustomDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\DialogCoordinator.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\DialogManager.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\DialogParticipation.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\DialogStateChangedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\IDialogCoordinator.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\InputDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\LoginDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\LoginDialogData.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\LoginDialogSettings.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MessageDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MessageDialogResult.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MessageDialogStyle.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MetroDialogAutomationPeer.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MetroDialogColorScheme.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\MetroDialogSettings.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\ProgressDialog.cs" />
+    <Compile Include="MahApps.Metro.Controls.Dialogs\ProgressDialogController.cs" />
+    <Compile Include="MahApps.Metro.Controls\AmPmComparer.cs" />
+    <Compile Include="MahApps.Metro.Controls\Badged.cs" />
+    <Compile Include="MahApps.Metro.Controls\BaseMetroTabControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\ButtonHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\ButtonsAlignment.cs" />
+    <Compile Include="MahApps.Metro.Controls\ClipBorder.cs" />
+    <Compile Include="MahApps.Metro.Controls\CloseCommand.cs" />
+    <Compile Include="MahApps.Metro.Controls\ClosingWindowEventHandlerArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\ComboBoxHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\CommandHelpers.cs" />
+    <Compile Include="MahApps.Metro.Controls\ContentControlEx.cs" />
+    <Compile Include="MahApps.Metro.Controls\ControlsHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\CustomValidationPopup.cs" />
+    <Compile Include="MahApps.Metro.Controls\DataGridCellHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\DataGridHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\DataGridNumericUpDownColumn.cs" />
+    <Compile Include="MahApps.Metro.Controls\DataGridRowHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\DateTimePicker.cs" />
+    <Compile Include="MahApps.Metro.Controls\DropDownButton.cs" />
+    <Compile Include="MahApps.Metro.Controls\ExpanderHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\Extensions.cs" />
+    <Compile Include="MahApps.Metro.Controls\FlipView.cs" />
+    <Compile Include="MahApps.Metro.Controls\FlipViewItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\Flyout.cs" />
+    <Compile Include="MahApps.Metro.Controls\FlyoutAutomationPeer.cs" />
+    <Compile Include="MahApps.Metro.Controls\FlyoutsControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\FlyoutTheme.cs" />
+    <Compile Include="MahApps.Metro.Controls\Glow.cs" />
+    <Compile Include="MahApps.Metro.Controls\GlowDirection.cs" />
+    <Compile Include="MahApps.Metro.Controls\GlowWindow.cs" />
+    <Compile Include="MahApps.Metro.Controls\GridLengthAnimation.cs" />
+    <Compile Include="MahApps.Metro.Controls\GroupBoxHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenu.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuGlyphItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuIconItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuImageItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuItemCollection.cs" />
+    <Compile Include="MahApps.Metro.Controls\HamburgerMenuItemInvokedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\HotKey.cs" />
+    <Compile Include="MahApps.Metro.Controls\HotKeyBox.cs" />
+    <Compile Include="MahApps.Metro.Controls\IMetroThumb.cs" />
+    <Compile Include="MahApps.Metro.Controls\ItemClickEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\ItemClickEventHandler.cs" />
+    <Compile Include="MahApps.Metro.Controls\ItemHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\IWindowPlacementSettings.cs" />
+    <Compile Include="MahApps.Metro.Controls\LayoutInvalidationCatcher.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroAnimatedSingleRowTabControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroAnimatedTabControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroContentControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroHeader.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroHeaderAutomationPeer.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroNavigationWindow.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroProgressBar.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroTabControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroTabItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroThumb.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroThumbContentControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroThumbContentControlAutomationPeer.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroThumbContentControlDragCompletedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroThumbContentControlDragStartedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroWindow.cs" />
+    <Compile Include="MahApps.Metro.Controls\MetroWindowHelpers.cs" />
+    <Compile Include="MahApps.Metro.Controls\MouseWheelChange.cs" />
+    <Compile Include="MahApps.Metro.Controls\MouseWheelState.cs" />
+    <Compile Include="MahApps.Metro.Controls\MultiFrameImage.cs" />
+    <Compile Include="MahApps.Metro.Controls\MultiFrameImageMode.cs" />
+    <Compile Include="MahApps.Metro.Controls\NumericInput.cs" />
+    <Compile Include="MahApps.Metro.Controls\NumericUpDown.cs" />
+    <Compile Include="MahApps.Metro.Controls\NumericUpDownChangedRoutedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\NumericUpDownChangedRoutedEventHandler.cs" />
+    <Compile Include="MahApps.Metro.Controls\PasswordBoxHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\Pivot.cs" />
+    <Compile Include="MahApps.Metro.Controls\PivotItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\Planerator.cs" />
+    <Compile Include="MahApps.Metro.Controls\Position.cs" />
+    <Compile Include="MahApps.Metro.Controls\ProgressRing.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeParameterChangedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeParameterChangedEventHandler.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeParameterChangeType.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeSelectionChangedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeSelectionChangedEventHandler.cs" />
+    <Compile Include="MahApps.Metro.Controls\RangeSlider.cs" />
+    <Compile Include="MahApps.Metro.Controls\RevealImage.cs" />
+    <Compile Include="MahApps.Metro.Controls\SafeRaise.cs" />
+    <Compile Include="MahApps.Metro.Controls\ScrollBarHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\ScrollViewerHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\ScrollViewerOffsetMediator.cs" />
+    <Compile Include="MahApps.Metro.Controls\SliderHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\Spelling.cs" />
+    <Compile Include="MahApps.Metro.Controls\SpellingResourceKeyId.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitButton.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitView.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitViewDisplayMode.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitViewPaneClosingEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitViewPanePlacement.cs" />
+    <Compile Include="MahApps.Metro.Controls\SplitViewTemplateSettings.cs" />
+    <Compile Include="MahApps.Metro.Controls\TabControlHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\TextBoxHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\Theme.cs" />
+    <Compile Include="MahApps.Metro.Controls\Tile.cs" />
+    <Compile Include="MahApps.Metro.Controls\TimePartVisibility.cs" />
+    <Compile Include="MahApps.Metro.Controls\TimePicker.cs" />
+    <Compile Include="MahApps.Metro.Controls\TimePickerBase.cs" />
+    <Compile Include="MahApps.Metro.Controls\TimePickerBaseSelectionChangedEventArgs.cs" />
+    <Compile Include="MahApps.Metro.Controls\TimePickerFormat.cs" />
+    <Compile Include="MahApps.Metro.Controls\ToggleButtonHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\ToggleSwitch.cs" />
+    <Compile Include="MahApps.Metro.Controls\ToggleSwitchButton.cs" />
+    <Compile Include="MahApps.Metro.Controls\TransitioningContentControl.cs" />
+    <Compile Include="MahApps.Metro.Controls\TransitionType.cs" />
+    <Compile Include="MahApps.Metro.Controls\TreeHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\Underline.cs" />
+    <Compile Include="MahApps.Metro.Controls\UnderlinedType.cs" />
+    <Compile Include="MahApps.Metro.Controls\Utils.cs" />
+    <Compile Include="MahApps.Metro.Controls\VisibilityHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\VisualStates.cs" />
+    <Compile Include="MahApps.Metro.Controls\WidthToMaxSideLengthConverter.cs" />
+    <Compile Include="MahApps.Metro.Controls\WinApiHelper.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowApplicationSettings.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowButtonCommands.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowCommands.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowCommandsItem.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowCommandsOverlayBehavior.cs" />
+    <Compile Include="MahApps.Metro.Controls\WindowSettings.cs" />
+    <Compile Include="MahApps.Metro.Converters\BackgroundToForegroundConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ClockDegreeConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\FontSizeOffsetConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\IsNullConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MarkupConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MarkupMultiConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathAddConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathDivideConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathMultiplyConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathOperation.cs" />
+    <Compile Include="MahApps.Metro.Converters\MathSubtractConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\MetroTabItemCloseButtonWidthConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\NullToUnsetValueConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\OffOnConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\RectangleHeightToRadiusConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ResizeModeMinMaxButtonVisibilityConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ThicknessBindingConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ThicknessSideType.cs" />
+    <Compile Include="MahApps.Metro.Converters\ThicknessToDoubleConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\TimeSpanToStringConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ToLowerConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\ToUpperConverter.cs" />
+    <Compile Include="MahApps.Metro.Converters\TreeViewItemExtensions.cs" />
+    <Compile Include="MahApps.Metro.Converters\TreeViewMarginConverter.cs" />
+    <Compile Include="MahApps.Metro\Accent.cs" />
+    <Compile Include="MahApps.Metro\AppName.cs" />
+    <Compile Include="MahApps.Metro\AppTheme.cs" />
+    <Compile Include="MahApps.Metro\MahAppsException.cs" />
+    <Compile Include="MahApps.Metro\OnThemeChangedEventArgs.cs" />
+    <Compile Include="MahApps.Metro\ThemeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\controls\glowwindow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\controls\metronavigationwindow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\controls\revealimage.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\amber.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\basedark.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\baselight.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\blue.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\brown.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\cobalt.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\crimson.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\cyan.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\emerald.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\green.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\indigo.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\lime.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\magenta.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\mauve.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\olive.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\orange.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\pink.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\purple.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\red.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\sienna.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\steel.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\taupe.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\teal.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\violet.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\accents\yellow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\clean.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleangroupbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleanstatusbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleanwindow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleanwindowbuttoncommands.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleanwindowbuttons.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\clean\cleanwindowcommands.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\colors.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.animatedsinglerowtabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.animatedtabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.buttons.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.calendar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.checkbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.combobox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.contextmenu.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.datagrid.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.datepicker.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.expander.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.groupbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.label.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.listbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.listview.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.page.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.passwordbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.progressbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.radiobutton.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.scrollbars.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.shadows.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.slider.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.statusbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.tabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.textblock.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.textbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.toggleswitch.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.toolbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.tooltip.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.treeview.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\controls.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\flatbutton.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\flatslider.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\fonts.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\shared.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\sizes.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\validationerrortemplate.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\button.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\colors.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\expander.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\groupbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\listbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\menu.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\scrollbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\styles.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\tabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\textbox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\styles\vs\window.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\badged.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\contentcontrolex.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\datetimepicker.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dialogs\basemetrodialog.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dialogs\inputdialog.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dialogs\logindialog.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dialogs\messagedialog.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dialogs\progressdialog.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\dropdownbutton.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\flipview.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\flyout.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\flyoutscontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\generic.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\glow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\hamburgermenu.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\hamburgermenutemplate.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\hotkeybox.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metroanimatedsinglerowtabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metroanimatedtabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metrocontentcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metroheader.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metroprogressbar.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metrotabcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metrotabitem.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\metrowindow.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\numericupdown.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\pivot.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\progressring.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\rangeslider.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\splitbutton.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\splitview.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\thumb.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\tile.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\toggleswitch.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\transitioningcontentcontrol.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\underline.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\windowbuttoncommands.xaml" />
+    <Page Include="D:\搜狗高速下载\新建文件夹 (2)\themes\windowcommands.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,16 @@
+namespace ControlzEx.Standard
+{
+	internal enum GPS
+	{
+		DEFAULT = 0,
+		HANDLERPROPERTIESONLY = 1,
+		READWRITE = 2,
+		TEMPORARY = 4,
+		FASTPROPERTIESONLY = 8,
+		OPENSLOWITEM = 0x10,
+		DELAYCREATION = 0x20,
+		BESTEFFORT = 0x40,
+		NO_OPLOCK = 0x80,
+		MASK_VALID = 0xFF
+	}
+}
