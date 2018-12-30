@@ -1,6 +1,7 @@
 ﻿using DGP_Daily_V2.Models;
 using DGP_Snap.Helpers;
 using DGP_Snap.Service;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace DGP_Snap
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
         public SystemTimeHost SystemTimeHost;
 
