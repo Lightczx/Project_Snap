@@ -170,21 +170,24 @@ namespace DGP_Snap
 
         }
 
+        private bool islocked = false;
         private async void LockButton_Click(object sender, RoutedEventArgs e)
         {
-            bool state = SystemTimeHost.SwitchWallPaperTimerState();
-            
-            if(state)//解锁
+            if (islocked)
             {
+                //unlock it
                 string password = await this.ShowInputAsync("解锁", "请输入工程码");
                 if (password == "admin")
                 {
                     //真正解锁
-                    ((Button)sender).Content = state ? "" : "";
+                    ((Button)sender).Content = "";
+                    SystemTimeHost.SwitchWallPaperTimerState();
+                    islocked = false;
                     try
                     {
                         CurrentImageUri = ImageSourceUriCollection.GetRandom();
                         CurrentImageSource = new BitmapImage(CurrentImageUri);
+                        
                     }
                     catch
                     {
@@ -196,11 +199,14 @@ namespace DGP_Snap
                     await this.ShowMessageAsync("工程码错误", "请输入正确的工程码");
                 }
             }
-            else
+            else//notlocked
             {
+                //lock it
+                ((Button)sender).Content = "";
                 CurrentImageSource = null;
-            }
-            
+                SystemTimeHost.SwitchWallPaperTimerState();
+                islocked = true;
+            }         
         }
     }
 }
