@@ -129,9 +129,17 @@ namespace DGP_Snap
 
         //}
 
-        private void SwitchWallPaperButton_Click(object sender, RoutedEventArgs e)
+        private async void SwitchWallPaperButton_Click(object sender, RoutedEventArgs e)
         {
-            SwitchRandomWallPaper();
+            if (!islocked)
+            {
+                SwitchRandomWallPaper();
+            }
+            else
+            {
+                await this.ShowMessageAsync("Warning", "请输入正确的工程码");
+            }
+            
         }
 
         public void SwitchRandomWallPaper()
@@ -147,7 +155,7 @@ namespace DGP_Snap
             }
         }
 
-        private void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
+        private async void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
         {
 
             using (WebClient webClient = new WebClient())
@@ -159,6 +167,7 @@ namespace DGP_Snap
                     try
                     {
                         webClient.DownloadFile(CurrentImageUri.OriginalString, path);
+                        await this.ShowMessageAsync("Success", "Download image successfully.");
                     }
                     catch(WebException)
                     {
