@@ -85,14 +85,14 @@
                 <Grid.Triggers>
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard Storyboard="{DynamicResource PaneOpenColorAnimation}"/>
-                        <BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>
+                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>-->
                         <BeginStoryboard Storyboard="{DynamicResource PaneOpenVisbilityAnimation}"/>
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectInAnimation}"/>
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginInAnimation}"/>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard Storyboard="{DynamicResource PaneCloseColorAnimation}"/>
-                        <BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>
+                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>-->
                         <BeginStoryboard Storyboard="{DynamicResource PaneCloseVisbilityAnimation}"/>
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectOutAnimation}"/>
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginOutAnimation}"/>
