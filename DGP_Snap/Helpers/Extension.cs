@@ -8,11 +8,14 @@ namespace DGP_Snap.Helpers
 {
     public static class ListExtension
     {
+
+        private static readonly Random random = new Random();
+
         public static T GetRandom<T>(this List<T> list)
         {
             if (list == null || list.Count == 0)
                 return default(T);
-            return list[new Random().Next(0, list.Count)];
+            return list[random.Next(0, list.Count)];
         }
 
         public static List<T> SubArray<T>(this List<T> list, int startIndex, int length = -1)

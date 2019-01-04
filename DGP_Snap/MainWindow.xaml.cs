@@ -65,7 +65,28 @@ namespace DGP_Snap
             DatePresenter.DataContext = SystemTimeHost;
             //WallPaperImage.DataContext = this;
             DataContext = this;
-        }
+        //    private const int SW_HIDE = 0;  //隐藏
+        //private const int SW_RESTORE = 5;  //显示
+
+        //[DllImport("user32.dll")]
+        //private static extern int FindWindow(string ClassName, string WindowName);
+        //[DllImport("user32.dll")]
+        //private static extern int ShowWindow(int handle, int cmdShow);
+
+
+        ////隐藏
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    ShowWindow(FindWindow("Shell_TrayWnd", null), SW_HIDE);//隐藏系统任务栏
+        //    ShowWindow(FindWindow("Button", null), SW_HIDE);//隐藏系统开始菜单栏按钮
+        //}
+        ////显示
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    ShowWindow(FindWindow("Shell_TrayWnd", null), SW_RESTORE);//显示系统任务栏
+        //    ShowWindow(FindWindow("Button", null), SW_RESTORE);//显示系统开始菜单栏按钮
+        //}
+    }
 
         //INotifyPropertyChanged实现
         public event PropertyChangedEventHandler PropertyChanged;
