@@ -55,6 +55,7 @@ namespace DGP_Snap.Pages
         {
             InitializeComponent();
             DataContext = this;
+            SystemTimeHost = new SystemTimeHost();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(/*int exitcode*/);

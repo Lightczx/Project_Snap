@@ -114,6 +114,7 @@
     <Compile Include="Helpers\SettingsStorage.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Extension.cs" />
+    <Compile Include="Helpers\NativeMethods.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\CityInformation.cs" />
     <Compile Include="Models\WallPaperQueryData.cs" />
@@ -122,6 +123,7 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\MottoService.cs" />
+    <Compile Include="Service\NavigationService.cs" />
     <Compile Include="Service\SystemTimeHost.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />

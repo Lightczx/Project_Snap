@@ -6,7 +6,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:DGP_Snap.Views"
-        x:Class="DGP_Snap.MainWindow"
+    xmlns:dgp_snap="clr-namespace:DGP_Snap"
+    x:Class="DGP_Snap.MainWindow"
         mc:Ignorable="d"
         Title="Snap" Height="768" Width="1024" Loaded="WindowLayer_Loaded" Background="Black" >
     <Window.Resources>
@@ -22,14 +23,20 @@
             <Grid.Effect>
                 <BlurEffect Radius="0" />
             </Grid.Effect>
-            <!--<Image Source="Resources/Assets/6.png" Stretch="UniformToFill"/>-->
             <Image x:Name="WallPaperImage" Stretch="UniformToFill" Source="{Binding CurrentImageSource,IsAsync=True}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <!--<Image Source="Resources/NoisyTexture.png"></Image>-->
             <Rectangle Fill="#7F000000"/>
-            <!--Source="{Binding CurrentImageSource}"-->
         </Grid>
+        <mah:HamburgerMenu>
+            <!--<mah:HamburgerMenuItemCollection>
+                
+            </mah:HamburgerMenuItemCollection>-->
+            <mah:HamburgerMenu.Content>
+                <Frame x:Name="currentFrame"></Frame>
+            </mah:HamburgerMenu.Content>
+        </mah:HamburgerMenu>
+        
 
-        <Grid x:Name="TextLayer">
+        <!--<Grid x:Name="TextLayer">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48"/>
                 <RowDefinition Height="auto"/>
@@ -67,10 +74,10 @@
 
             <Grid Grid.Row="2">
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,12,0,0">
-                    <!--<TextBlock/>-->
+                    --><!--<TextBlock/>--><!--
                 </StackPanel>
             </Grid>
-        </Grid >
+        </Grid >-->
         <Grid x:Name="InteractiveLayer">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="PaneWidth" Width="auto"/>

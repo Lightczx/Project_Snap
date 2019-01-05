@@ -23,7 +23,6 @@ namespace DGP_Snap
     /// </summary>
     public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
-        public SystemTimeHost SystemTimeHost;
 
         public WeatherInformation WeatherInformation { get; set; }
 
@@ -42,6 +41,7 @@ namespace DGP_Snap
         }
         public Uri CurrentImageUri { get; set; }
 
+        public Frame CurrentFrame => currentFrame;
 
         public MainWindow()
         {
@@ -59,34 +59,16 @@ namespace DGP_Snap
             #endregion
 
             InitializeComponent();
-
-            SystemTimeHost = new SystemTimeHost();
-            TimePresenter.DataContext = SystemTimeHost;
-            DatePresenter.DataContext = SystemTimeHost;
-            //WallPaperImage.DataContext = this;
             DataContext = this;
-        //    private const int SW_HIDE = 0;  //隐藏
-        //private const int SW_RESTORE = 5;  //显示
 
-        //[DllImport("user32.dll")]
-        //private static extern int FindWindow(string ClassName, string WindowName);
-        //[DllImport("user32.dll")]
-        //private static extern int ShowWindow(int handle, int cmdShow);
+            //SystemTimeHost = new SystemTimeHost();
+            //TimePresenter.DataContext = SystemTimeHost;
+            //DatePresenter.DataContext = SystemTimeHost;
 
+            NativeMethods.HideSystemTaskBar();
 
-        ////隐藏
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    ShowWindow(FindWindow("Shell_TrayWnd", null), SW_HIDE);//隐藏系统任务栏
-        //    ShowWindow(FindWindow("Button", null), SW_HIDE);//隐藏系统开始菜单栏按钮
-        //}
-        ////显示
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    ShowWindow(FindWindow("Shell_TrayWnd", null), SW_RESTORE);//显示系统任务栏
-        //    ShowWindow(FindWindow("Button", null), SW_RESTORE);//显示系统开始菜单栏按钮
-        //}
-    }
+        
+        }
 
         //INotifyPropertyChanged实现
         public event PropertyChangedEventHandler PropertyChanged;
@@ -101,8 +83,7 @@ namespace DGP_Snap
         }
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(/*int exitcode*/);
+        private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
 
         private async void WindowLayer_Loaded(object sender, RoutedEventArgs e)
         {
@@ -211,7 +192,7 @@ namespace DGP_Snap
                 {
                     //真正解锁
                     ((Button)sender).Content = "";
-                    SystemTimeHost.SwitchWallPaperTimerState();
+                    //SystemTimeHost.SwitchWallPaperTimerState();
                     islocked = false;
                     try
                     {
@@ -234,7 +215,7 @@ namespace DGP_Snap
                 //lock it
                 ((Button)sender).Content = "";
                 CurrentImageSource = null;
-                SystemTimeHost.SwitchWallPaperTimerState();
+                //SystemTimeHost.SwitchWallPaperTimerState();
                 islocked = true;
             }         
         }

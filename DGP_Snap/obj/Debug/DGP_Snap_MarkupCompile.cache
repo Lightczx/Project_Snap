@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\soft\新建文件夹\DGP_Snap\obj\Debug\
+D:\GitFile\DGP_Snap\obj\Debug\
 DGP_Snap
 none
 false
 CODE_ANALYSIS;DEBUG;TRACE
-D:\soft\新建文件夹\DGP_Snap\App.xaml
+D:\GitFile\DGP_Snap\App.xaml
 7-1869358301
 
-201742720882
-20-1970574197
+221291438493
+20430568223
 MainWindow.xaml;Pages\HomePage.xaml;Resources\Animations.xaml;Resources\Fonts.xaml;Resources\Styles.xaml;Views\SettingView.xaml;Views\WeatherView.xaml;
 
 False

@@ -109,22 +109,7 @@ namespace DGP_Daily_V2.Services
             set
             {
                 Set(ref _weatherInformation, value);
-                //_weatherInformation = value;
             }
         }
-        //public async static Task<DailyBoardViewItemModel> GetWeatherInformationForDailyBoardItemAsync()
-        //{
-        //    if (_weatherInformation == null)
-        //        _weatherInformation = await GetWeatherInfomationAsync();
-        //    return new DailyBoardViewItemModel
-        //    {
-        //        Title=_weatherInformation.RealTimeTemp + "°",
-        //        //SubTitle=_weatherInformation.
-        //        PrimaryText = _weatherInformation.City,
-        //        SecondaryText = _weatherInformation.UpdateTime,
-        //        NavigatedPageType = typeof(WeatherPage),
-        //        NavigatedParameter = _weatherInformation,
-        //    };
-        //}
     }
 }

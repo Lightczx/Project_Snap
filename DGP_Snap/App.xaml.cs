@@ -1,6 +1,8 @@
 ﻿
 using DGP_Snap.Helpers;
 using DGP_Snap.Models;
+using DGP_Snap.Pages;
+using DGP_Snap.Service;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,5 +17,23 @@ namespace DGP_Snap
     /// </summary>
     public partial class App : Application
     {
+        //protected override void OnStartup(StartupEventArgs e)
+        //{
+        //    base.OnStartup(e);
+            
+        //}
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            NavigationService.Navigate<HomePage>();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            NativeMethods.ShowSystemTaskBar();
+        }
+
     }
 }
