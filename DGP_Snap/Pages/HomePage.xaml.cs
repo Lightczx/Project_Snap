@@ -51,11 +51,18 @@ namespace DGP_Snap.Pages
         }
         public Uri CurrentImageUri { get; set; }
 
+        
+
+
         public HomePage()
         {
             InitializeComponent();
-            DataContext = this;
             SystemTimeHost = new SystemTimeHost();
+            DataContext = this;
+            TimePresenter.DataContext = SystemTimeHost;
+            DatePresenter.DataContext = SystemTimeHost;
+            TimeSpanPresenter.DataContext = SystemTimeHost;
+            TimeSpanPresenter2.DataContext = SystemTimeHost;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(/*int exitcode*/);

@@ -58,14 +58,14 @@ namespace DGP_Snap.Service
 
         public static void GoForward() => Frame.GoForward();
 
-        public static bool Navigate(Type pageType, object parameter = null)
+        public static bool Navigate(object pageObject, object parameter = null)
         {
             // Don't open the same page multiple times
-            if (Frame.Content?.GetType() != pageType || (parameter != null && !parameter.Equals(_lastParamUsed)))
+            if (Frame.Content?.GetType() != pageObject.GetType() || (parameter != null && !parameter.Equals(_lastParamUsed)))
             {
 
 
-                var navigationResult = Frame.Navigate( pageType.Assembly.CreateInstance(pageType.ToString()), parameter);
+                var navigationResult = Frame.Navigate( pageObject, parameter);
                 if (navigationResult)
                 {
                     _lastParamUsed = parameter;
@@ -79,9 +79,9 @@ namespace DGP_Snap.Service
             }
         }
 
-        public static bool Navigate<T>(object parameter = null)
-            where T : Page
-            => Navigate(typeof(T), parameter);
+        //public static bool Navigate<T>(T page,object parameter = null)
+        //    where T : Page
+        //    => Navigate(T., parameter);
 
         private static void RegisterFrameEvents()
         {

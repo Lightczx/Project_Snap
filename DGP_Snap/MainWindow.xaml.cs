@@ -45,27 +45,38 @@ namespace DGP_Snap
 
         public MainWindow()
         {
+            //NativeMethods.HideSystemTaskBar();
             //调试模式配置
             #region
-            WindowState = WindowState.Maximized;
-            WindowStyle = WindowStyle.None;
-            ResizeMode = ResizeMode.NoResize;
-            if (System.Diagnostics.Debugger.IsAttached)
+            //WindowState = WindowState.Maximized;
+            //videoScreenMediaElement.Play();
+            //this.WindowState = System.Windows.WindowState.Normal;
+            //this.WindowStyle = System.Windows.WindowStyle.None;
+            //this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            this.Topmost = true;
+
+            this.Left = -1;
+            this.Top = -1;
+            //WindowStyle = WindowStyle.None;
+            //ResizeMode = ResizeMode.NoResize;
+            Width = SystemParameters.PrimaryScreenWidth;
+            Height = SystemParameters.PrimaryScreenHeight;
+            if (Debugger.IsAttached)
             {
                 WindowState = WindowState.Normal;
                 WindowStyle = WindowStyle.SingleBorderWindow;
                 ResizeMode = ResizeMode.CanResize;
             }
+            //WindowState = WindowState.Maximized;
             #endregion
 
             InitializeComponent();
             DataContext = this;
 
             //SystemTimeHost = new SystemTimeHost();
-            //TimePresenter.DataContext = SystemTimeHost;
-            //DatePresenter.DataContext = SystemTimeHost;
 
-            NativeMethods.HideSystemTaskBar();
+            
+            
 
         
         }
@@ -91,7 +102,7 @@ namespace DGP_Snap
             SettingsStorage.AppSettings = await SettingsStorage.RetriveSettingsAsync();
             //初始化图片
             await InitializeWallpaper();
-
+            //NewMethod();
         }
 
         private async Task InitializeWallpaper()
@@ -157,28 +168,39 @@ namespace DGP_Snap
             }
         }
 
-        private async void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
+        private /*async*/ void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
         {
+            /*await*/ NewMethod();
 
+        }
+
+        private /*async*/ /*Task*/void  NewMethod()
+        {
             using (WebClient webClient = new WebClient())
             {
-                string path= FileAccessHelper.GetFilePickerPath("png 文件 (*.png)|*.png|All files (*.*)|*.*","picture.png");
+                //string path = FileAccessHelper.GetFolderPickerPath("png 文件 (*.png)|*.png|All files (*.*)|*.*", "picture.png");
 
-                if(path!=null&& CurrentImageUri!=null)
+                if (true/*path != null && CurrentImageUri != null*/)
                 {
                     try
                     {
-                        webClient.DownloadFile(CurrentImageUri.OriginalString, path);
-                        await this.ShowMessageAsync("Success", "Download image successfully.");
+                        int i = 1;
+                        foreach(Uri item in ImageSourceUriCollection)
+                        {
+                            webClient.DownloadFile(item, @"D:\PICTURE\" + i.ToString()+".png");
+                            i++;
+                        }
+                        
+                        
+                        //await this.ShowMessageAsync("Success", "Download image successfully.");
                     }
-                    catch(WebException)
+                    catch (WebException)
                     {
                         Debug.WriteLine("网络出错");
                     }
                 }
-                    
-            }
 
+            }
         }
 
         private bool islocked = false;

@@ -26,7 +26,7 @@ namespace DGP_Snap
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            NavigationService.Navigate<HomePage>();
+            NavigationService.Navigate(new HomePage());
         }
 
         protected override void OnExit(ExitEventArgs e)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace DGP_Snap.Helpers
@@ -38,6 +39,35 @@ namespace DGP_Snap.Helpers
                 return null;
             }
         }
+
+        public static string GetFolderPickerPath(string filter, string filename, string path = null)
+        {
+            FolderBrowserDialog openFileDialog = new FolderBrowserDialog
+            {
+                //InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
+                //Filter = filter,
+                //FilterIndex = 1,
+                //RestoreDirectory = true,
+                //CheckFileExists = false,
+
+                //FileName = filename,
+            };
+            //if (path != null)
+            //{
+            //    openFileDialog.InitialDirectory = path;
+            //}
+
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                return openFileDialog.SelectedPath;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
         //[DllImport("Comdlg32.dll", SetLastError = true, ThrowOnUnmappableChar = true, CharSet = CharSet.Auto)]
         //public static extern bool GetOpenFileName([In, Out] OpenFileName openfilename);
@@ -84,7 +114,7 @@ namespace DGP_Snap.Helpers
         //    if (GetOpenFileName(ofn))
         //    {
         //        //此处做你想做的事 ...=ofn.file; 
-                
+
         //    }
         //    return null;
         //}

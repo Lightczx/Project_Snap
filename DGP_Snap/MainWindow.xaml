@@ -5,11 +5,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:DGP_Snap.Views"
-    xmlns:dgp_snap="clr-namespace:DGP_Snap"
     x:Class="DGP_Snap.MainWindow"
+    WindowTransitionsEnabled="True"
+    ShowTitleBar="False"
         mc:Ignorable="d"
-        Title="Snap" Height="768" Width="1024" Loaded="WindowLayer_Loaded" Background="Black" >
+        Title="Snap"
+    Height="768" 
+    Width="1024" 
+    Loaded="WindowLayer_Loaded" 
+    Background="Black" 
+    BorderThickness="0" 
+    Topmost="True" 
+    WindowStyle="None"
+    ResizeMode="NoResize"
+    >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,58 +36,30 @@
             <Rectangle Fill="#7F000000"/>
         </Grid>
         <mah:HamburgerMenu>
-            <!--<mah:HamburgerMenuItemCollection>
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuIconItem Label="主页" Icon="&#xE80F;"/>
+                    <mah:HamburgerMenuIconItem Label="主页" Icon="&#xE80F;"/>
+                    <mah:HamburgerMenuIconItem Label="主页" Icon="&#xE80F;"/>
+                </mah:HamburgerMenuItemCollection>
                 
-            </mah:HamburgerMenuItemCollection>-->
-            <mah:HamburgerMenu.Content>
-                <Frame x:Name="currentFrame"></Frame>
-            </mah:HamburgerMenu.Content>
+            </mah:HamburgerMenu.ItemsSource>
+            <mah:HamburgerMenu.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock FontSize="18" Text="{Binding Icon}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{DynamicResource Icon_Font}"/>
+                        <TextBlock Margin="12,0,0,0" Style="{StaticResource BodyTextBlockStyle}" Text="{Binding Label}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </mah:HamburgerMenu.ItemTemplate>
+            <Frame x:Name="currentFrame"></Frame>
         </mah:HamburgerMenu>
         
-
-        <!--<Grid x:Name="TextLayer">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="48"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <StackPanel Tag="日期时间" Grid.Row="1" Margin="48,0,0,0" >
-                    <TextBlock 
-                x:Name="TimePresenter" 
-                Text="{Binding PresentTimeString}" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Center" 
-                FontSize="128" 
-                Margin="0" 
-                FontFamily="{DynamicResource Light UI Font}" 
-                Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
-                    <TextBlock 
-                x:Name="DatePresenter"
-                Text="{Binding PresentDateString}" 
-                Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"
-                Margin="12,0,12,0" 
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Left" 
-                FontSize="36"
-                FontFamily="{DynamicResource Light UI Font}" />
-                    <views:WeatherView x:Name="WeatherView"/>
-                </StackPanel>
-                <Calendar 
-                        SelectionMode="None" 
-                        Style="{DynamicResource DefaultCalendarStyle}" 
-                        CalendarButtonStyle="{DynamicResource DefaultCalendarButtonStyle}" 
-                        CalendarItemStyle="{DynamicResource DefaultCalendarItemStyle}" 
-                        CalendarDayButtonStyle="{DynamicResource DefaultCalendarDayButtonStyle}" />
-            </StackPanel>
-
-            <Grid Grid.Row="2">
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,12,0,0">
-                    --><!--<TextBlock/>--><!--
-                </StackPanel>
-            </Grid>
-        </Grid >-->
-        <Grid x:Name="InteractiveLayer">
+        <!--<Grid x:Name="InteractiveLayer">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="PaneWidth" Width="auto"/>
                 <ColumnDefinition Width="*"/>
@@ -92,16 +73,16 @@
                 <Grid.Triggers>
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard Storyboard="{DynamicResource PaneOpenColorAnimation}"/>
-                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>-->
-                        <BeginStoryboard Storyboard="{DynamicResource PaneOpenVisbilityAnimation}"/>
-                        <BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectInAnimation}"/>
+                        --><!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>-->
+                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenVisbilityAnimation}"/>-->
+                        <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectInAnimation}"/>--><!--
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginInAnimation}"/>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard Storyboard="{DynamicResource PaneCloseColorAnimation}"/>
-                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>-->
-                        <BeginStoryboard Storyboard="{DynamicResource PaneCloseVisbilityAnimation}"/>
-                        <BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectOutAnimation}"/>
+                        --><!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>-->
+                        <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseVisbilityAnimation}"/>-->
+                        <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectOutAnimation}"/>--><!--
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginOutAnimation}"/>
                     </EventTrigger>
                 </Grid.Triggers>
@@ -119,7 +100,7 @@
                         FontSize="16" 
                         Foreground="White"
                         />
-                    <StackPanel x:Name="FunctionButtonPanel" Visibility="Collapsed">
+                    <StackPanel x:Name="FunctionButtonPanel">
                         <Button 
                             x:Name="CloseButton" 
                             Foreground="Red"
@@ -137,7 +118,7 @@
                     </StackPanel>
 
                 </StackPanel>
-                <StackPanel Tag="左侧下按钮" VerticalAlignment="Bottom" Visibility="{Binding ElementName=FunctionButtonPanel,Path=Visibility}" HorizontalAlignment="Left">
+                <StackPanel Tag="左侧下按钮" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                     <Button 
                             x:Name="SwitchWallPaperButton" 
                             Content="&#xE72C;"  
@@ -193,8 +174,8 @@
                             FontSize="16" 
                             Foreground="White"/>
                 </StackPanel>
-                <!--<views:SettingView Margin="48,0,48,0"></views:SettingView>-->
+                --><!--<views:SettingView Margin="48,0,48,0"></views:SettingView>--><!--
             </Grid>
-        </Grid>
+        </Grid>-->
     </Grid>
 </mah:MetroWindow>

@@ -70,10 +70,56 @@ namespace DGP_Snap.Service
             }
             set
             {
+                PresentTimeSpanString = GetTimeSpan();
+                PresentTimeSpanString2 = GetTimeSpan2();
                 Set(ref _presentDateString, value);
             }
         }
         private string _presentDateString;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PresentTimeSpanString
+        {
+            get
+            {
+                return GetTimeSpan();
+            }
+            set
+            {
+                Set(ref _presentDateTimeString, value);
+            }
+        }
+
+        private string GetTimeSpan()
+        {
+            DateTime t0 = new DateTime(2019, 6, 7);
+            return "距离高考还有" + (t0 - CurrentDateTime).ToString() + "天";
+        }
+
+        private string _presentDateTimeString;//=GetTimeSpan();
+
+
+        public string PresentTimeSpanString2
+        {
+            get
+            {
+                return GetTimeSpan2();
+            }
+            set
+            {
+                Set(ref _presentDateTimeString2, value);
+            }
+        }
+
+        private string GetTimeSpan2()
+        {
+            DateTime t0 = new DateTime(2019, 4, 7);
+            return "距离选考还有" + (t0 - CurrentDateTime).ToString() + "天";
+        }
+
+        private string _presentDateTimeString2;
 
         /// <summary>
         /// Snap: WalllPaperImageSource 总集
