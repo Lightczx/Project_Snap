@@ -44,14 +44,14 @@
                     
                     Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <StackPanel Tag="日期时间" Grid.Row="1" Margin="12,0,0,0" >
+            
+            <StackPanel Grid.Row="1" Tag="日期时间" Margin="0,0,0,0"  HorizontalAlignment="Center">
                     <TextBlock 
                     x:Name="TimePresenter" 
                     Text="{Binding PresentTimeString}" 
-                    HorizontalAlignment="Left" 
+                    HorizontalAlignment="Center" 
                     VerticalAlignment="Center" 
-                    FontSize="128" 
+                    FontSize="140" 
                     Margin="0" 
                     FontFamily="{DynamicResource Light UI Font}" 
                     Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
@@ -59,21 +59,20 @@
                     x:Name="DatePresenter"
                     Text="{Binding PresentDateString}" 
                     Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"
-                    Margin="12,0,12,0" 
+                    Margin="0,-22,0,0" 
                     VerticalAlignment="Center" 
-                    HorizontalAlignment="Left" 
-                    FontSize="36"
+                    HorizontalAlignment="Center" 
+                    FontSize="28"
                     FontFamily="{DynamicResource Light UI Font}" />
                     
-                    <views:WeatherView x:Name="WeatherView"/>
-                </StackPanel>
-                <Calendar 
+                    <!--<views:WeatherView x:Name="WeatherView"/>-->
+             </StackPanel>
+                <!--<Calendar 
                         SelectionMode="None" 
                         Style="{DynamicResource DefaultCalendarStyle}" 
                         CalendarButtonStyle="{DynamicResource DefaultCalendarButtonStyle}" 
                         CalendarItemStyle="{DynamicResource DefaultCalendarItemStyle}" 
-                        CalendarDayButtonStyle="{DynamicResource DefaultCalendarDayButtonStyle}" />
-            </StackPanel>
+                        CalendarDayButtonStyle="{DynamicResource DefaultCalendarDayButtonStyle}" />-->
 
             <Grid Grid.Row="2">
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,12,0,0">

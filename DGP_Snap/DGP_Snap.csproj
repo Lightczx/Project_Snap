@@ -56,6 +56,9 @@
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.0.0-alpha0218\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="FluentWPF, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentWPF.0.6.1\lib\net45\FluentWPF.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.2.0.0-alpha0186\lib\net46\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -111,6 +114,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\FileAccessHelper.cs" />
+    <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorage.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Extension.cs" />
@@ -119,16 +123,28 @@
     <Compile Include="Models\CityInformation.cs" />
     <Compile Include="Models\WallPaperQueryData.cs" />
     <Compile Include="Models\WeatherInformation.cs" />
+    <Compile Include="Pages\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CountdownPage.xaml.cs">
+      <DependentUpon>CountdownPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeatherPage.xaml.cs">
+      <DependentUpon>WeatherPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\MottoService.cs" />
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="Service\SystemTimeHost.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />
-    <Compile Include="Views\SettingView.xaml.cs">
-      <DependentUpon>SettingView.xaml</DependentUpon>
+    <Compile Include="Views\WallpaperView.xaml.cs">
+      <DependentUpon>WallpaperView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
@@ -145,7 +161,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CountdownPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WeatherPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,7 +193,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SettingView.xaml">
+    <Page Include="Views\WallpaperView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using DGP_Daily_V2.Models;
 using DGP_Snap.Helpers;
+using DGP_Snap.Pages;
 using DGP_Snap.Service;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -15,6 +16,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace DGP_Snap
 {
@@ -27,6 +29,7 @@ namespace DGP_Snap
         public WeatherInformation WeatherInformation { get; set; }
 
         public List<Uri> ImageSourceUriCollection { get; set; }
+
         private ImageSource _currentImageSource;
         public ImageSource CurrentImageSource
         {
@@ -43,43 +46,42 @@ namespace DGP_Snap
 
         public Frame CurrentFrame => currentFrame;
 
+        public HamburgerMenu Selected { get; private set; }
+
         public MainWindow()
         {
-            //NativeMethods.HideSystemTaskBar();
-            //调试模式配置
-            #region
-            //WindowState = WindowState.Maximized;
-            //videoScreenMediaElement.Play();
-            //this.WindowState = System.Windows.WindowState.Normal;
-            //this.WindowStyle = System.Windows.WindowStyle.None;
-            //this.ResizeMode = System.Windows.ResizeMode.NoResize;
-            this.Topmost = true;
+            ////NativeMethods.HideSystemTaskBar();
+            ////调试模式配置
+            //#region
+            ////WindowState = WindowState.Maximized;
+            ////videoScreenMediaElement.Play();
+            ////this.WindowState = System.Windows.WindowState.Normal;
+            ////this.WindowStyle = System.Windows.WindowStyle.None;
+            ////this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            //this.Topmost = true;
 
-            this.Left = -1;
-            this.Top = -1;
-            //WindowStyle = WindowStyle.None;
-            //ResizeMode = ResizeMode.NoResize;
-            Width = SystemParameters.PrimaryScreenWidth;
-            Height = SystemParameters.PrimaryScreenHeight;
-            if (Debugger.IsAttached)
-            {
-                WindowState = WindowState.Normal;
-                WindowStyle = WindowStyle.SingleBorderWindow;
-                ResizeMode = ResizeMode.CanResize;
-            }
-            //WindowState = WindowState.Maximized;
-            #endregion
+            //this.Left = -1;
+            //this.Top = -1;
+            ////WindowStyle = WindowStyle.None;
+            ////ResizeMode = ResizeMode.NoResize;
+            //Width = SystemParameters.PrimaryScreenWidth;
+            //Height = SystemParameters.PrimaryScreenHeight;
+            //if (Debugger.IsAttached)
+            //{
+            //    WindowState = WindowState.Normal;
+            //    WindowStyle = WindowStyle.SingleBorderWindow;
+            //    ResizeMode = ResizeMode.CanResize;
+            //}
+            ////WindowState = WindowState.Maximized;
+            //#endregion
 
             InitializeComponent();
             DataContext = this;
-
-            //SystemTimeHost = new SystemTimeHost();
-
-            
-            
-
-        
+            Service.NavigationService.Navigated += Frame_Navigated;
+            ////SystemTimeHost = new SystemTimeHost();
         }
+
+      
 
         //INotifyPropertyChanged实现
         public event PropertyChangedEventHandler PropertyChanged;
@@ -110,7 +112,7 @@ namespace DGP_Snap
             try
             {
                 ImageSourceUriCollection = await WallPaperService.GetBingImageSourceCollectionAsync();
-                ImageSourceUriCollection = ImageSourceUriCollection.Union(await WallPaperService.GetWallPaperImageSourceCollectionAsync()).ToList();
+                ImageSourceUriCollection = ImageSourceUriCollection.Union(await WallPaperService.GetWallPaperImageSourceCollectionAsync()).ToList();            
                 CurrentImageUri = ImageSourceUriCollection.GetRandom();
                 CurrentImageSource = new BitmapImage(CurrentImageUri);
             }
@@ -240,6 +242,33 @@ namespace DGP_Snap
                 //SystemTimeHost.SwitchWallPaperTimerState();
                 islocked = true;
             }         
+        }
+
+        private void NavigationView_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs args)
+        {
+            if (args.IsItemOptions)
+            {
+                Service.NavigationService.Navigate<SettingPage>();
+                return;
+            }
+
+            var item = NavigationView.Items
+                            .OfType<HamburgerMenuItem>()
+                            .First(menuItem => menuItem.Label == ((HamburgerMenuItem)args.InvokedItem).Label);
+
+            var pageType = item.GetValue(NavHelper.NavigateToProperty) as Type;
+            Service.NavigationService.Navigate(pageType);
+        }
+
+        private void Frame_Navigated(object sender, NavigationEventArgs e)
+        {
+            //if (e.Content.GetType() == typeof(SettingPage))
+            //{
+            //    Selected = NavigationView.OptionsItems. as NavigationViewItem;
+            //    return;
+            //}
+
+            //Selected = navigationView.MenuItems.OfType<NavigationViewItem>().FirstOrDefault(menuItem => IsMenuItemForPageType(menuItem, e.SourcePageType));
         }
     }
 }

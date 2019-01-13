@@ -136,12 +136,10 @@ D:\soft\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csproj.CoreCompileInputs.cache
 D:\soft\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csproj.CopyComplete
 D:\soft\GitFile\DGP_Snap\obj\Debug\DGP_Snap.exe
 D:\soft\GitFile\DGP_Snap\obj\Debug\DGP_Snap.pdb
-D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
 D:\GitFile\DGP_Snap\obj\Debug\Resources\Fonts.baml
 D:\GitFile\DGP_Snap\obj\Debug\App.baml
 D:\GitFile\DGP_Snap\obj\Debug\MainWindow.g.cs
 D:\GitFile\DGP_Snap\obj\Debug\Pages\HomePage.g.cs
-D:\GitFile\DGP_Snap\obj\Debug\Views\SettingView.g.cs
 D:\GitFile\DGP_Snap\obj\Debug\Views\WeatherView.g.cs
 D:\GitFile\DGP_Snap\obj\Debug\App.g.cs
 D:\GitFile\DGP_Snap\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -158,7 +156,6 @@ D:\GitFile\DGP_Snap\obj\Debug\MainWindow.baml
 D:\GitFile\DGP_Snap\obj\Debug\Pages\HomePage.baml
 D:\GitFile\DGP_Snap\obj\Debug\Resources\Animations.baml
 D:\GitFile\DGP_Snap\obj\Debug\Resources\Styles.baml
-D:\GitFile\DGP_Snap\obj\Debug\Views\SettingView.baml
 D:\GitFile\DGP_Snap\obj\Debug\Views\WeatherView.baml
 D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.g.resources
 D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.Properties.Resources.resources
@@ -194,3 +191,12 @@ D:\soft\新建文件夹\DGP_Snap\obj\Debug\DGP_Snap.csproj.CopyComplete
 D:\soft\新建文件夹\DGP_Snap\obj\Debug\DGP_Snap.exe
 D:\soft\新建文件夹\DGP_Snap\obj\Debug\DGP_Snap.pdb
 D:\soft\新建文件夹\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
+D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
+D:\GitFile\DGP_Snap\obj\Debug\Pages\CalendarPage.g.cs
+D:\GitFile\DGP_Snap\obj\Debug\Pages\CountdownPage.g.cs
+D:\GitFile\DGP_Snap\obj\Debug\Pages\SettingPage.g.cs
+D:\GitFile\DGP_Snap\obj\Debug\Pages\WeatherPage.g.cs
+D:\GitFile\DGP_Snap\obj\Debug\Pages\CalendarPage.baml
+D:\GitFile\DGP_Snap\obj\Debug\Pages\CountdownPage.baml
+D:\GitFile\DGP_Snap\obj\Debug\Pages\SettingPage.baml
+D:\GitFile\DGP_Snap\obj\Debug\Pages\WeatherPage.baml

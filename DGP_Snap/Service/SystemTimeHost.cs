@@ -169,10 +169,11 @@ namespace DGP_Snap.Service
             CurrentDateTime = DateTime.Now;
 
             PresentTimeString = CurrentDateTime.ToString("HH:mm");
+
             string Month = MonthToEnglish(CurrentDateTime.Month);
             string DayOfMonth = CurrentDateTime.Day.ToString();
             string DayOfWeek = WeekdayToEnglish(CurrentDateTime.DayOfWeek);
-            PresentDateString = $"{Month} {DayOfMonth} {DayOfWeek}";
+            PresentDateString = $"{DayOfWeek} - {Month} {DayOfMonth}";
         }
 
         private string MonthToEnglish(int Month)
@@ -180,29 +181,29 @@ namespace DGP_Snap.Service
             switch (Month)
             {
                 case 1:
-                    return "Jan.";
+                    return "January";
                 case 2:
-                    return "Feb.";
+                    return "Feberuary";
                 case 3:
-                    return "Mar.";
+                    return "March";
                 case 4:
-                    return "Apr.";
+                    return "April";
                 case 5:
                     return "May";
                 case 6:
-                    return "Jun.";
+                    return "June";
                 case 7:
-                    return "Jul.";
+                    return "July";
                 case 8:
-                    return "Aug.";
+                    return "August";
                 case 9:
-                    return "Sept.";
+                    return "September";
                 case 10:
-                    return "Oct.";
+                    return "October";
                 case 11:
-                    return "Nov.";
+                    return "November";
                 case 12:
-                    return "Dec.";
+                    return "December";
             }
             return string.Empty;
         }
@@ -212,19 +213,19 @@ namespace DGP_Snap.Service
             switch (dayOfWeek)
             {
                 case DayOfWeek.Monday:
-                    return "Mon.";
+                    return "Monday";
                 case DayOfWeek.Tuesday:
-                    return "Tues.";
+                    return "Tuesday";
                 case DayOfWeek.Wednesday:
-                    return "Wed.";
+                    return "Wednesday";
                 case DayOfWeek.Thursday:
-                    return "Thurs.";
+                    return "Thursday";
                 case DayOfWeek.Friday:
-                    return "Fri.";
+                    return "Friday";
                 case DayOfWeek.Saturday:
-                    return "Sat.";
+                    return "Saturday";
                 case DayOfWeek.Sunday:
-                    return "Sun.";
+                    return "Sunday";
             }
             return string.Empty;
         }
