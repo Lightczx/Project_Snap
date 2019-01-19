@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DGP_Snap.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="450" d:DesignWidth="800" 
+             x:Name="Root" Loaded="Root_Loaded">
+    <Grid Background="Black">
+        <Image x:Name="WallPaperImage" Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Rectangle Fill="#7F000000"/>
     </Grid>
 </UserControl>

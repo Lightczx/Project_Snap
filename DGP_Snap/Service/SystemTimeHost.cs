@@ -23,7 +23,6 @@ namespace DGP_Snap.Service
         /// <summary>
         /// Snap: 壁纸Timer
         /// </summary>
-        private DispatcherTimer wallPaperTimer;
 
         //INotifyPropertyChanged接口实现部分
         public event PropertyChangedEventHandler PropertyChanged;
@@ -133,34 +132,6 @@ namespace DGP_Snap.Service
             innerTimer.Tick += OnInnerTimerTicked;
             innerTimer.Interval = TimeSpan.FromSeconds(1);
             innerTimer.Start();
-            //壁纸Timer初始化
-            wallPaperTimer = new DispatcherTimer();
-            wallPaperTimer.Tick += OnWallPaperTimerTicked;
-            wallPaperTimer.Interval = TimeSpan.FromMinutes(5);
-            wallPaperTimer.Start();
-            //初次设置壁纸
-        }
-
-        private void OnWallPaperTimerTicked(object sender, EventArgs e)
-        {
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.SwitchRandomWallPaper();
-        }
-
-        public bool SwitchWallPaperTimerState()
-        {
-            if (wallPaperTimer.IsEnabled)
-            {
-                wallPaperTimer.Stop();
-                Debug.WriteLine("disabled");
-                return false;
-            }
-            else
-            {
-                wallPaperTimer.Start();
-                Debug.WriteLine("enabled");
-                return true;
-            }
         }
 
         private void OnInnerTimerTicked(object sender, EventArgs e)

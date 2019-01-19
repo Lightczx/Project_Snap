@@ -317,8 +317,6 @@
   <ItemGroup>
     <Resource Include="Resources\Assets\6.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Control\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
