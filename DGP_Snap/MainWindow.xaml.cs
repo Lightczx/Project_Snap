@@ -34,35 +34,10 @@ namespace DGP_Snap
 
         public MainWindow()
         {
-            ////NativeMethods.HideSystemTaskBar();
-            ////调试模式配置
-            //#region
-            ////WindowState = WindowState.Maximized;
-            ////videoScreenMediaElement.Play();
-            ////this.WindowState = System.Windows.WindowState.Normal;
-            ////this.WindowStyle = System.Windows.WindowStyle.None;
-            ////this.ResizeMode = System.Windows.ResizeMode.NoResize;
-            //this.Topmost = true;
-
-            //this.Left = -1;
-            //this.Top = -1;
-            ////WindowStyle = WindowStyle.None;
-            ////ResizeMode = ResizeMode.NoResize;
-            //Width = SystemParameters.PrimaryScreenWidth;
-            //Height = SystemParameters.PrimaryScreenHeight;
-            //if (Debugger.IsAttached)
-            //{
-            //    WindowState = WindowState.Normal;
-            //    WindowStyle = WindowStyle.SingleBorderWindow;
-            //    ResizeMode = ResizeMode.CanResize;
-            //}
-            ////WindowState = WindowState.Maximized;
-            //#endregion
 
             InitializeComponent();
             DataContext = this;
             Service.NavigationService.Navigated += Frame_Navigated;
-            ////SystemTimeHost = new SystemTimeHost();
         }
 
 
@@ -83,15 +58,13 @@ namespace DGP_Snap
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         #endregion
 
+        //退出程序
         private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
+
 
         private async void WindowLayer_Loaded(object sender, RoutedEventArgs e)
         {
-            //初始化设置
             SettingsStorage.AppSettings = await SettingsStorage.RetriveSettingsAsync();
-            //初始化图片
-            //await InitializeWallpaper();
-            //NewMethod();
         }
 
         

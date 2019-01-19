@@ -8,6 +8,9 @@ namespace DGP_Snap.Models
 {
     public class AppSettings
     {
+        class Base
+        {
 
+        }
     }
 }

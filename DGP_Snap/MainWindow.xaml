@@ -41,9 +41,9 @@
             </DataTemplate>
 
             <ItemContainerTemplate x:Key="MenuButtonTemplate">
-                <TextBlock Foreground="White" Style="{StaticResource BaseTextBlockStyle}" FontSize="16" FontFamily="{StaticResource Icon_Font}"  Text="&#xE700;"/>
+                <TextBlock Foreground="White" Style="{StaticResource BodyTextBlockStyle}" FontSize="16" FontFamily="{StaticResource Icon_Font}"  Text="&#xE700;"/>
             </ItemContainerTemplate>
-
+            
         </ResourceDictionary>
 
     </Window.Resources>
@@ -66,7 +66,7 @@
             SelectedIndex="0"
             ItemInvoked="NavigationView_ItemInvoked"
             DisplayMode="CompactOverlay"
-            OpenPaneLength="240"
+            OpenPaneLength="240" 
             >
             <mah:HamburgerMenu.ItemsSource>
                 <mah:HamburgerMenuItemCollection>
@@ -84,10 +84,24 @@
             </mah:HamburgerMenu.OptionsItemsSource>
 
 
-            
+
             <Frame x:Name="currentFrame" NavigationUIVisibility="Hidden"/>
         </mah:HamburgerMenu>
-
+        <Grid>
+            <Button 
+                            x:Name="CloseButton" 
+                            Foreground="Red"
+                            Content="&#xE106;"  
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Top" 
+                            Width="48" 
+                            Height="32" 
+                            Click="CloseButton_Click" 
+                            Grid.Column="1" 
+                            Style="{DynamicResource DefaultButtonStyle}" 
+                            FontFamily="{DynamicResource Icon_Font}"  
+                            FontSize="12" />
+        </Grid>
         <!--<Grid x:Name="InteractiveLayer">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="PaneWidth" Width="auto"/>
@@ -134,19 +148,6 @@
                         Foreground="White"
                         />
                     <StackPanel x:Name="FunctionButtonPanel">
-                        <Button 
-                            x:Name="CloseButton" 
-                            Foreground="Red"
-                            Content="&#xE106;"  
-                            HorizontalAlignment="Right" 
-                            VerticalAlignment="Top" 
-                            Width="48" 
-                            Height="48" 
-                            Click="CloseButton_Click" 
-                            Grid.Column="1" 
-                            Style="{DynamicResource DefaultButtonStyle}" 
-                            FontFamily="{DynamicResource Icon_Font}"  
-                            FontSize="16" />
                         
                     </StackPanel>
 
