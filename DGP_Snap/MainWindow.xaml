@@ -4,11 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+
     
     xmlns:helpers="clr-namespace:DGP_Snap.Helpers"
     xmlns:pages="clr-namespace:DGP_Snap.Pages"
     xmlns:views="clr-namespace:DGP_Snap.Views"
+    
+    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
     
     x:Name="WindowLayer"
     x:Class="DGP_Snap.MainWindow"
@@ -20,8 +22,8 @@
     Width="1024" 
     Loaded="WindowLayer_Loaded" 
     Background="Black" 
-    WindowStyle="None"
-    ResizeMode="NoResize"
+WindowStyle="None"
+    ResizeMode="NoResize" 
     >
     <Window.Resources>
         <ResourceDictionary>
@@ -43,24 +45,37 @@
             <ItemContainerTemplate x:Key="MenuButtonTemplate">
                 <TextBlock Foreground="White" Style="{StaticResource BodyTextBlockStyle}" FontSize="16" FontFamily="{StaticResource Icon_Font}"  Text="&#xE700;"/>
             </ItemContainerTemplate>
-            
+            <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
+                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                    <Grid>
+                        <AdornerDecorator>
+                            <ContentPresenter/>
+                        </AdornerDecorator>
+                        <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
+                            <Condition Property="WindowState" Value="Normal"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="Visibility" TargetName="WindowResizeGrip" Value="Visible"/>
+                    </MultiTrigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+
         </ResourceDictionary>
 
     </Window.Resources>
-
     <Grid>
-        <!--<Grid x:Name="WallPaperLayer">
-            <Grid.Effect>
-                <BlurEffect Radius="0" />
-            </Grid.Effect>
-            <Image x:Name="WallPaperImage" Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Rectangle Fill="#7F000000"/>
-        </Grid>-->
         <views:WallpaperView/>
         <mah:HamburgerMenu 
             x:Name="NavigationView"
             OptionsItemTemplate="{DynamicResource MenuItemDataTemplate}" 
             ItemTemplate="{DynamicResource MenuItemDataTemplate}" 
+            
             HamburgerButtonTemplate="{DynamicResource MenuButtonTemplate}"
             PaneBackground="#5F000000"
             SelectedIndex="0"
@@ -72,7 +87,7 @@
                 <mah:HamburgerMenuItemCollection>
                     <mah:HamburgerMenuIconItem Label="主页" Icon="&#xE80F;" helpers:NavHelper.NavigateTo="{x:Type pages:HomePage}" />
                     <mah:HamburgerMenuIconItem Label="天气" Icon="&#xE753;" helpers:NavHelper.NavigateTo="{x:Type pages:WeatherPage}" />
-                    <mah:HamburgerMenuIconItem Label="日历" Icon="&#xE787;" helpers:NavHelper.NavigateTo="{x:Type pages:WeatherPage}" />
+                    <mah:HamburgerMenuIconItem Label="日历" Icon="&#xE787;" helpers:NavHelper.NavigateTo="{x:Type pages:CalendarPage}" />
                     <!--<mah:HamburgerMenuIconItem Label="倒计时" Icon="&#xE916;" helpers:NavHelper.NavigateTo="{x:Type pages:CountdownPage}" />-->
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.ItemsSource>
@@ -83,9 +98,18 @@
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.OptionsItemsSource>
 
-
-
-            <Frame x:Name="currentFrame" NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="currentFrame" NavigationUIVisibility="Hidden">
+                <Frame.Template>
+                    <ControlTemplate TargetType="{x:Type Frame}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                            <mah:TransitioningContentControl  Transition="Default" RestartTransitionOnContentChange="True" >
+                                <ContentPresenter x:Name="PART_FrameCP"/>
+                            </mah:TransitioningContentControl>
+                            <!---->
+                        </Border>
+                    </ControlTemplate>
+                </Frame.Template>
+            </Frame>
         </mah:HamburgerMenu>
         <Grid>
             <Button 
@@ -102,7 +126,9 @@
                             FontFamily="{DynamicResource Icon_Font}"  
                             FontSize="12" />
         </Grid>
-        <!--<Grid x:Name="InteractiveLayer">
+    </Grid>
+
+    <!--<Grid x:Name="InteractiveLayer">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="PaneWidth" Width="auto"/>
                 <ColumnDefinition Width="*"/>
@@ -117,19 +143,19 @@
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard Storyboard="{DynamicResource PaneOpenColorAnimation}"/>
                         -->
-        <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>-->
-        <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenVisbilityAnimation}"/>-->
-        <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectInAnimation}"/>-->
-        <!--
+    <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenAnimation}"/>-->
+    <!--<BeginStoryboard Storyboard="{DynamicResource PaneOpenVisbilityAnimation}"/>-->
+    <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectInAnimation}"/>-->
+    <!--
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginInAnimation}"/>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard Storyboard="{DynamicResource PaneCloseColorAnimation}"/>
                         -->
-        <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>-->
-        <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseVisbilityAnimation}"/>-->
-        <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectOutAnimation}"/>-->
-        <!--
+    <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseAnimation}"/>-->
+    <!--<BeginStoryboard Storyboard="{DynamicResource PaneCloseVisbilityAnimation}"/>-->
+    <!--<BeginStoryboard Storyboard="{DynamicResource BackgroundBlurEffectOutAnimation}"/>-->
+    <!--
                         <BeginStoryboard Storyboard="{DynamicResource BackgroundMarginOutAnimation}"/>
                     </EventTrigger>
                 </Grid.Triggers>
@@ -209,9 +235,8 @@
                             Foreground="White"/>
                 </StackPanel>
                 -->
-        <!--<views:SettingView Margin="48,0,48,0"></views:SettingView>-->
-        <!--
+    <!--<views:SettingView Margin="48,0,48,0"></views:SettingView>-->
+    <!--
             </Grid>
         </Grid>-->
-    </Grid>
 </Window>

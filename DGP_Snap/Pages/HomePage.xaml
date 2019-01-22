@@ -16,33 +16,23 @@
         </ResourceDictionary>
 
     </Page.Resources>
-    <Grid>
 
-        <Grid x:Name="TextLayer">
+    <Grid x:Name="TextLayer">
             <Grid.RowDefinitions>
-                <RowDefinition Height="64"/>
+                <RowDefinition Height="48"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" >
+            <StackPanel Grid.Row="0" Tag="倒计时">
                 <TextBlock x:Name="TimeSpanPresenter" 
                     Text="{Binding PresentTimeSpanString}" 
-                    HorizontalAlignment="Left" 
+                    HorizontalAlignment="Center" 
                     VerticalAlignment="Center" 
-                    Margin="0" 
-                           FontSize="24"
+                    Margin="8" 
+                           FontSize="28"
                            Style="{StaticResource BodyTextBlockStyle}"
-                    
                     Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
-                <TextBlock x:Name="TimeSpanPresenter2" 
-                    Text="{Binding PresentTimeSpanString2}" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" 
-                    Margin="0" 
-                           FontSize="24"
-                           Style="{StaticResource BodyTextBlockStyle}"
-                    
-                    Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                
             </StackPanel>
             
             <StackPanel Grid.Row="1" Tag="日期时间" Margin="0,0,0,0"  HorizontalAlignment="Center">
@@ -51,10 +41,11 @@
                     Text="{Binding PresentTimeString}" 
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center" 
-                    FontSize="140" 
+                    FontSize="144" 
                     Margin="0" 
-                    FontFamily="{DynamicResource Light UI Font}" 
-                    Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" />
+                    Style="{StaticResource HeaderTextBlockStyle}"
+                    Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"
+                     />
                     <TextBlock 
                     x:Name="DatePresenter"
                     Text="{Binding PresentDateString}" 
@@ -62,10 +53,10 @@
                     Margin="0,-22,0,0" 
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center" 
-                    FontSize="28"
-                    FontFamily="{DynamicResource Light UI Font}" />
+                    FontSize="26"
+                    Style="{StaticResource HeaderTextBlockStyle}" />
                     
-                    <!--<views:WeatherView x:Name="WeatherView"/>-->
+                    
              </StackPanel>
                 <!--<Calendar 
                         SelectionMode="None" 
@@ -75,11 +66,12 @@
                         CalendarDayButtonStyle="{DynamicResource DefaultCalendarDayButtonStyle}" />-->
 
             <Grid Grid.Row="2">
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,12,0,0">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,24,0,0">
                     <!--<TextBlock/>-->
+                    <views:WeatherView x:Name="WeatherView" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
             </Grid>
         </Grid>
         
-    </Grid>
+
 </Page>

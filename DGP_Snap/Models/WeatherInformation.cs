@@ -7,11 +7,11 @@ namespace DGP_Daily_V2.Models
     [XmlRoot(ElementName = "resp")]
     public class WeatherInformation
     {
-        [XmlElement(ElementName = "city")]          public string City { get; set; }//城市
-        [XmlElement(ElementName = "updatetime")]    public string UpdateTime { get; set; }//更新时间
-        [XmlElement(ElementName = "wendu")]         public string RealTimeTemp { get; set; }//实时温度
-        [XmlElement(ElementName = "fengli")]        public string Power { get; set; } //风力
-        [XmlElement(ElementName = "shidu")]         public string Humidity { get; set; }//湿度
+        [XmlElement(ElementName = "city")] public string City { get; set; }//城市
+        [XmlElement(ElementName = "updatetime")] public string UpdateTime { get; set; }//更新时间
+        [XmlElement(ElementName = "wendu")] public string RealTimeTemp { get; set; }//实时温度
+        [XmlElement(ElementName = "fengli")] public string Power { get; set; } //风力
+        [XmlElement(ElementName = "shidu")] public string Humidity { get; set; }//湿度
         public double Double_Humidity
         {
             get
@@ -21,44 +21,44 @@ namespace DGP_Daily_V2.Models
                 return 0;
             }
         }
-        [XmlElement(ElementName = "fengxiang")]     public string Direction { get; set; }//风向
-        [XmlElement(ElementName = "sunrise_1")]     public string Sunrise { get; set; }//日出
-        [XmlElement(ElementName = "sunset_1")]      public string Sunset { get; set; }//日出
-        [XmlElement(ElementName = "yesterday")]     public Yesterday Yesterday { get; set; }//昨天
-        [XmlElement(ElementName = "forecast")]      public Forecast Forecast { get; set; }//天气预报
-        [XmlElement(ElementName = "zhishus")]       public IndexCollections IndexCollections { get; set; }//指数
+        [XmlElement(ElementName = "fengxiang")] public string Direction { get; set; }//风向
+        [XmlElement(ElementName = "sunrise_1")] public string Sunrise { get; set; }//日出
+        [XmlElement(ElementName = "sunset_1")] public string Sunset { get; set; }//日出
+        [XmlElement(ElementName = "yesterday")] public Yesterday Yesterday { get; set; }//昨天
+        [XmlElement(ElementName = "forecast")] public Forecast Forecast { get; set; }//天气预报
+        [XmlElement(ElementName = "zhishus")] public IndexCollection IndexCollections { get; set; }//指数
 
     }
 
     [XmlRoot(ElementName = "yesteday")]
     public class Yesterday//昨天
     {
-        [XmlElement(ElementName = "date_1")]        public string Date { get; set; }//昨天日期
-        [XmlElement(ElementName = "high_1")]        public string HighTemp { get; set; }//最高温度
-        [XmlElement(ElementName = "low_1")]         public string LowTemp { get; set; }//最低温度
-        [XmlElement(ElementName = "day_1")]         public YesterDayHalf Day { get; set; }
-        [XmlElement(ElementName = "night_1")]       public YesterDayHalf Night { get; set; }
+        [XmlElement(ElementName = "date_1")] public string Date { get; set; }//昨天日期
+        [XmlElement(ElementName = "high_1")] public string HighTemp { get; set; }//最高温度
+        [XmlElement(ElementName = "low_1")] public string LowTemp { get; set; }//最低温度
+        [XmlElement(ElementName = "day_1")] public YesterDayHalf Day { get; set; }
+        [XmlElement(ElementName = "night_1")] public YesterDayHalf Night { get; set; }
     }
 
     public class YesterDayHalf
     {
-        [XmlElement(ElementName = "type_1")]        public string State { get; set; }//天气状况
-        [XmlElement(ElementName = "fx_1")]          public string Direction { get; set; }//风向
-        [XmlElement(ElementName = "fl_1")]          public string Power { get; set; } //风力
+        [XmlElement(ElementName = "type_1")] public string State { get; set; }//天气状况
+        [XmlElement(ElementName = "fx_1")] public string Direction { get; set; }//风向
+        [XmlElement(ElementName = "fl_1")] public string Power { get; set; } //风力
     }
 
     [XmlRoot(ElementName = "forecast")]
     public class Forecast
     {
-        [XmlElement(ElementName = "weather")]       public List<Weather> Weathers { get; set; }//天气预报
+        [XmlElement(ElementName = "weather")] public List<Weather> Weathers { get; set; }//天气预报
     }
 
     [XmlRoot(ElementName = "weather")]
     public class Weather
     {
         public string _date;
-        [XmlElement(ElementName = "date")]          public string Date { get => _date; set => _date = value.Remove(value.IndexOf("星")); }//日期
-        [XmlElement(ElementName = "high")]          public string HighTemp { get; set; }//最高温度
+        [XmlElement(ElementName = "date")] public string Date { get => _date; set => _date = value.Remove(value.IndexOf("星")); }//日期
+        [XmlElement(ElementName = "high")] public string HighTemp { get; set; }//最高温度
         public double Double_HighTemp
         {
             get
@@ -67,8 +67,7 @@ namespace DGP_Daily_V2.Models
             }
             set { Double_HighTemp = value; }
         }//最高温度
-
-        [XmlElement(ElementName = "low")]           public string LowTemp { get; set; }//最低温度
+        [XmlElement(ElementName = "low")] public string LowTemp { get; set; }//最低温度
         public double Double_LowTemp
         {
             get
@@ -77,10 +76,10 @@ namespace DGP_Daily_V2.Models
             }
             set { Double_LowTemp = value; }
         }//最高温度
-
-        [XmlElement(ElementName = "day")]public WeatherDayHalf Day { get; set; }//白天
-        [XmlElement(ElementName = "night")]public WeatherDayHalf Night { get; set; }//夜间
+        [XmlElement(ElementName = "day")] public WeatherDayHalf Day { get; set; }//白天
+        [XmlElement(ElementName = "night")] public WeatherDayHalf Night { get; set; }//夜间
     }
+    
     public class WeatherDayHalf
     {
         [XmlElement(ElementName = "type")]public string State { get; set; }//天气状况
@@ -88,12 +87,11 @@ namespace DGP_Daily_V2.Models
         [XmlElement(ElementName = "fengli")]public string Power { get; set; } //风力
     }
 
-    [XmlRoot(ElementName = "zhishus")]
-    public class IndexCollections
+    public class IndexCollection
     {
-        [XmlElement(ElementName = "zhishu")]public ObservableCollection<Index> DetailIndexCollections { get; set; }//指数
+        [XmlElement(ElementName = "zhishu")]public List<Index> DetailIndexCollection { get; set; }//指数
     }
-    [XmlRoot(ElementName = "zhishu")]
+
     public class Index
     {
         [XmlElement(ElementName = "name")]public string Name { get; set; }//指数名称

@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace DGP_Snap.Pages
 {
@@ -33,19 +34,147 @@ namespace DGP_Snap.Pages
         }
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        private DispatcherTimer innerTimer = new DispatcherTimer(DispatcherPriority.Send);
 
-        public SystemTimeHost SystemTimeHost;
- 
+        public DateTime CurrentDateTime { get; set; }
+
+        /// <summary>
+        /// Snap: 显示的时间
+        /// </summary>
+        public string PresentTimeString
+        {
+            get
+            {
+                return _presentTimeString;
+            }
+            set
+            {
+                Set(ref _presentTimeString, value);
+            }
+        }
+        private string _presentTimeString;
+
+        /// <summary>
+        /// Snap: 显示的日期
+        /// </summary>
+        public string PresentDateString
+        {
+            get
+            {
+                return _presentDateString;
+            }
+            set
+            {
+                
+                Set(ref _presentDateString, value);
+            }
+        }
+        private string _presentDateString;
+
+        private string _presentTimeSpanString;
+        public string PresentTimeSpanString
+        {
+            get
+            {
+                return _presentTimeSpanString = GetTimeSpan();
+            }
+            set
+            {
+                Set(ref _presentTimeSpanString, value);
+            }
+        }
+
+        private string GetTimeSpan()
+        {
+            DateTime t0 = new DateTime(2019, 6, 7);
+            DateTime t1 = new DateTime(2019, 4, 7);
+            string GaokaoTimeSpan = (t0 - CurrentDateTime).Days.ToString();
+            string XuanKaoTimeSpan = (t1 - CurrentDateTime).Days.ToString();
+            return $"高考/选考  {GaokaoTimeSpan}/{XuanKaoTimeSpan}  天";
+        }
+
         public HomePage()
         {
             InitializeComponent();
-            SystemTimeHost = new SystemTimeHost();
+
             DataContext = this;
-            TimePresenter.DataContext = SystemTimeHost;
-            DatePresenter.DataContext = SystemTimeHost;
-            TimeSpanPresenter.DataContext = SystemTimeHost;
-            TimeSpanPresenter2.DataContext = SystemTimeHost;
+
+            innerTimer.Tick += OnInnerTimerTicked;
+            innerTimer.Interval = TimeSpan.FromSeconds(1);
+            innerTimer.Start();
         }
 
+        private void OnInnerTimerTicked(object sender, EventArgs e)
+        {
+            UpdateTime();
+        }
+
+        private void UpdateTime()
+        {
+            CurrentDateTime = DateTime.Now;
+            PresentTimeSpanString = GetTimeSpan();
+
+            PresentTimeString = CurrentDateTime.ToString("HH:mm");
+
+            string Month = MonthToEnglish(CurrentDateTime.Month);
+            string DayOfMonth = CurrentDateTime.Day.ToString();
+            string DayOfWeek = WeekdayToEnglish(CurrentDateTime.DayOfWeek);
+
+            PresentDateString = $"{DayOfWeek} - {Month} {DayOfMonth}";
+        }
+
+        private string MonthToEnglish(int Month)
+        {
+            switch (Month)
+            {
+                case 1:
+                    return "January";
+                case 2:
+                    return "Feberuary";
+                case 3:
+                    return "March";
+                case 4:
+                    return "April";
+                case 5:
+                    return "May";
+                case 6:
+                    return "June";
+                case 7:
+                    return "July";
+                case 8:
+                    return "August";
+                case 9:
+                    return "September";
+                case 10:
+                    return "October";
+                case 11:
+                    return "November";
+                case 12:
+                    return "December";
+            }
+            return string.Empty;
+        }
+
+        private string WeekdayToEnglish(DayOfWeek dayOfWeek)
+        {
+            switch (dayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    return "Monday";
+                case DayOfWeek.Tuesday:
+                    return "Tuesday";
+                case DayOfWeek.Wednesday:
+                    return "Wednesday";
+                case DayOfWeek.Thursday:
+                    return "Thursday";
+                case DayOfWeek.Friday:
+                    return "Friday";
+                case DayOfWeek.Saturday:
+                    return "Saturday";
+                case DayOfWeek.Sunday:
+                    return "Sunday";
+            }
+            return string.Empty;
+        }
     }
 }

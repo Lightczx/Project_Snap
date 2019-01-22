@@ -140,7 +140,6 @@
     </Compile>
     <Compile Include="Service\MottoService.cs" />
     <Compile Include="Service\NavigationService.cs" />
-    <Compile Include="Service\SystemTimeHost.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />
     <Compile Include="Views\WallpaperView.xaml.cs">

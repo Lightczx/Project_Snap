@@ -14,13 +14,13 @@
     <SolidColorBrush x:Key="Button.Static.Border" Color="Transparent"/>
 
     <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#66808080"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#CC808080"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#66808080"/>
 
     <SolidColorBrush x:Key="Button.Pressed.Background" Color="#CC808080"/>
     <SolidColorBrush x:Key="Button.Pressed.Border" Color="Gray"/>
 
     <SolidColorBrush x:Key="Button.Disabled.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="Transparent"/>
     <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#CCFFFFFF"/>
     
     <Thickness x:Key="EightTopMargin">8, 8, 0, 0</Thickness>
@@ -170,7 +170,7 @@
                         <Rectangle x:Name="SelectedBackground" Fill="{TemplateBinding Background}" Opacity="0" />
                         <Rectangle x:Name="Background" Fill="{TemplateBinding Background}" Opacity="0" />
                         <ContentPresenter TextBlock.FontSize="16" Opacity="1" x:Name="NormalText" TextElement.Foreground="White" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,0,1,1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        <Rectangle x:Name="CalendarButtonFocusVisual" IsHitTestVisible="false"  Stroke="White" Visibility="Collapsed"/>
+                        <Rectangle x:Name="CalendarButtonFocusVisual" IsHitTestVisible="false"  Stroke="Transparent" Visibility="Collapsed"/>
                     </Grid>
                     <!--<ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">

@@ -53,33 +53,33 @@ namespace DGP_Daily_V2.Services
             request.Method = "GET";
 
             Stream stream;
-            string xmlstring = string.Empty;
+            string xmlResponseString = string.Empty;
             try
             {
                 using (HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse())
                 {
                     //Stream stream = new System.IO.Compression.GZipStream(webResponse.GetResponseStream(), System.IO.Compression.CompressionMode.Decompress);
                     stream = webResponse.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                    using (StreamReader streamReader = new StreamReader(stream, Encoding.UTF8))
                     {
-                        xmlstring = reader.ReadToEnd();
+                        xmlResponseString = streamReader.ReadToEnd();
                         //stream.Dispose();
                     }
                 }
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(xmlstring);
+                XmlDocument xmlDocument = new XmlDocument();
+                xmlDocument.LoadXml(xmlResponseString);
 
-                using (StringWriter sw = new StringWriter())
+                using (StringWriter stringWriter = new StringWriter())
                 {
-                    using (XmlTextWriter writer = new XmlTextWriter(sw))
+                    using (XmlTextWriter xmlTextWriter = new XmlTextWriter(stringWriter))
                     {
-                        writer.Indentation = 2;  // the Indentation
-                        writer.Formatting = Formatting.Indented;
-                        doc.WriteContentTo(writer);
+                        xmlTextWriter.Indentation = 2;  // the Indentation
+                        xmlTextWriter.Formatting = Formatting.Indented;
+                        xmlDocument.WriteContentTo(xmlTextWriter);
                     }
-                    xmlstring = sw.ToString();
+                    xmlResponseString = stringWriter.ToString();
                 }
-                byte[] array = Encoding.UTF8.GetBytes(xmlstring);
+                byte[] array = Encoding.UTF8.GetBytes(xmlResponseString);
                 MemoryStream xmlstream = new MemoryStream(array);
                 return xmlstream;
             }

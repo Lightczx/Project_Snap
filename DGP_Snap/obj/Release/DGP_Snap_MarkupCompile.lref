@@ -1,9 +1,12 @@
-﻿D:\soft\新建文件夹\DGP_Snap\obj\Release\GeneratedInternalTypeHelper.g.cs
+﻿D:\soft\Snap\DGP_Snap\obj\Release\GeneratedInternalTypeHelper.g.cs
 
-FD:\soft\新建文件夹\DGP_Snap\MainWindow.xaml;;
-FD:\soft\新建文件夹\DGP_Snap\Pages\HomePage.xaml;;
-FD:\soft\新建文件夹\DGP_Snap\Resources\Animations.xaml;;
-FD:\soft\新建文件夹\DGP_Snap\Resources\Styles.xaml;;
-FD:\soft\新建文件夹\DGP_Snap\Views\SettingView.xaml;;
-FD:\soft\新建文件夹\DGP_Snap\Views\WeatherView.xaml;;
+FD:\soft\Snap\DGP_Snap\MainWindow.xaml;;
+FD:\soft\Snap\DGP_Snap\Pages\CalendarPage.xaml;;
+FD:\soft\Snap\DGP_Snap\Pages\CountdownPage.xaml;;
+FD:\soft\Snap\DGP_Snap\Pages\HomePage.xaml;;
+FD:\soft\Snap\DGP_Snap\Pages\SettingPage.xaml;;
+FD:\soft\Snap\DGP_Snap\Pages\WeatherPage.xaml;;
+FD:\soft\Snap\DGP_Snap\Resources\Animations.xaml;;
+FD:\soft\Snap\DGP_Snap\Views\WallpaperView.xaml;;
+FD:\soft\Snap\DGP_Snap\Views\WeatherView.xaml;;
 

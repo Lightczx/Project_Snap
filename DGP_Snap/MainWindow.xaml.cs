@@ -17,16 +17,19 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 
 namespace DGP_Snap
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : /*Metro*/Window, INotifyPropertyChanged
     {
+        
 
-        public WeatherInformation WeatherInformation { get; set; }
+
+        //public WeatherInformation WeatherInformation { get; set; }
 
         public Frame CurrentFrame => currentFrame;
 
@@ -38,9 +41,10 @@ namespace DGP_Snap
             InitializeComponent();
             DataContext = this;
             Service.NavigationService.Navigated += Frame_Navigated;
+     
         }
 
-
+        
 
         //INotifyPropertyChanged实现
         #region
@@ -66,8 +70,8 @@ namespace DGP_Snap
         {
             SettingsStorage.AppSettings = await SettingsStorage.RetriveSettingsAsync();
         }
+        //private bool islocked = false;
 
-        
 
         //private void MenuButton_Click(object sender, RoutedEventArgs e)
         //{
@@ -101,10 +105,10 @@ namespace DGP_Snap
         //    {
         //        await this.ShowMessageAsync("Warning", "请输入正确的工程码");
         //    }
-            
+
         //}
 
-        
+
 
         //private /*async*/ void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
         //{
@@ -112,9 +116,9 @@ namespace DGP_Snap
 
         //}
 
-        
 
-        private bool islocked = false;
+
+
         //private async void LockButton_Click(object sender, RoutedEventArgs e)
         //{
         //    if (islocked)
@@ -131,7 +135,7 @@ namespace DGP_Snap
         //            {
         //                CurrentImageUri = ImageSourceUriCollection.GetRandom();
         //                CurrentImageSource = new BitmapImage(CurrentImageUri);
-                        
+
         //            }
         //            catch
         //            {
@@ -179,5 +183,7 @@ namespace DGP_Snap
 
             //Selected = navigationView.MenuItems.OfType<NavigationViewItem>().FirstOrDefault(menuItem => IsMenuItemForPageType(menuItem, e.SourcePageType));
         }
+
+        
     }
 }

@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\DGP_Snap",
-    "\\DGP_Snap\\Helpers"
+    "\\DGP_Snap\\Helpers",
+    "\\DGP_Snap\\Models",
+    "\\DGP_Snap\\Pages",
+    "\\DGP_Snap\\Resources",
+    "\\DGP_Snap\\Service",
+    "\\DGP_Snap\\Views"
   ],
-  "SelectedNode": "\\DGP_Snap\\MainWindow.xaml.cs",
+  "SelectedNode": "\\DGP_Snap\\Pages\\HomePage.xaml",
   "PreviewInSolutionExplorer": false
 }
