@@ -122,7 +122,7 @@
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\CityInformation.cs" />
     <Compile Include="Models\WallPaperQueryData.cs" />
-    <Compile Include="Models\WeatherInformation.cs" />
+    <Compile Include="Models\WeatherQueryData.cs" />
     <Compile Include="Pages\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>

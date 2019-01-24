@@ -10,7 +10,6 @@ namespace DGP_Snap.Models
     class WallPaperQueryData
     {
     }
-    
     public class WallPaper360JsonInfo
     {
         [JsonProperty("errno")]             public string Errno { get; set; }

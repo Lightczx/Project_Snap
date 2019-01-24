@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace DGP_Daily_V2.Models
 {
     [XmlRoot(ElementName = "resp")]
-    public class WeatherInformation
+    public class WeatherQueryData
     {
         [XmlElement(ElementName = "city")] public string City { get; set; }//城市
         [XmlElement(ElementName = "updatetime")] public string UpdateTime { get; set; }//更新时间

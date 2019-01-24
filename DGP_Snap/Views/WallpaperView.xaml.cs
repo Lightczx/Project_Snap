@@ -58,18 +58,19 @@ namespace DGP_Snap.Views
         private async Task InitializeWallpaperAsync()
         {
 
-            try
-            {
-                ImageUriCollection = await WallPaperService.GetBingImageSourceCollectionAsync();
-                List<Uri> WallpaperFrom360 = await WallPaperService.GetWallPaperImageSourceCollectionAsync();
-                ImageUriCollection = ImageUriCollection.Union(WallpaperFrom360).ToList();
+            //try
+            //{
+            ImageUriCollection = await WallPaperService.GetWallPaperImageSourceCollectionAsync();
+            //List<Uri> WallpaperFrom360 = 
+            //    ImageUriCollection = ImageUriCollection.Union(WallpaperFrom360).ToList();
 
                 SwitchRandomWallPaper();
-            }
-            catch
-            {
-                Debug.WriteLine("Snap: 异步获取图片时出错");
-            }
+                //GetAllWallpaper();
+            //}
+            //catch
+            //{
+            //    Debug.WriteLine("Snap: 异步获取图片时出错");
+            //}
 
         }
 

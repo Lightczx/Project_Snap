@@ -6,8 +6,6 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace DGP_Snap.Service
 {
@@ -24,8 +22,8 @@ namespace DGP_Snap.Service
             request.Method = "GET";
             request.ContentType = "application/json;charset=UTF-8";
 
-            try
-            {
+            //try
+            //{
                 string jsonMetaString;
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())//获取响应
                 {
@@ -35,11 +33,11 @@ namespace DGP_Snap.Service
                     }
                 }
                 return await Json.ToObjectAsync<WallPaper360JsonInfo>(jsonMetaString);
-            }
-            catch
-            {
-                return null;
-            }
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
         }
 
         public static async Task<List<Uri>> GetWallPaperImageSourceCollectionAsync()
@@ -50,8 +48,8 @@ namespace DGP_Snap.Service
             foreach (DataItemFor360 dataItem in wallPaper360JsonInfo.Data)
             {
                 //restriction
-                if( !( 
-                    dataItem.Tag.Contains("性感") || 
+                if (!(
+                    dataItem.Tag.Contains("性感") ||
                     //dataItem.Tag.Contains("卡通") ||
                     //dataItem.Tag.Contains("动漫") ||
                     dataItem.Tag.Contains("游戏") ||
@@ -61,8 +59,8 @@ namespace DGP_Snap.Service
                     dataItem.Tag.Contains("女孩") ||
                     dataItem.Tag.Contains("明星") ||
                     dataItem.Tag.Contains("车")
-                    ) )
-                imageSourceCollection.Add(new Uri(dataItem.Url));
+                    ))
+                    imageSourceCollection.Add(new Uri(dataItem.Url));
             }
 
             return imageSourceCollection;

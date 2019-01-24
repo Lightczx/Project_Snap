@@ -33,6 +33,7 @@ namespace DGP_Snap
         {
             base.OnExit(e);
             NativeMethods.ShowSystemTaskBar();
+            
         }
 
     }

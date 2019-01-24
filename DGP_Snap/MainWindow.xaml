@@ -5,12 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 
-    
     xmlns:helpers="clr-namespace:DGP_Snap.Helpers"
     xmlns:pages="clr-namespace:DGP_Snap.Pages"
     xmlns:views="clr-namespace:DGP_Snap.Views"
-    
-    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
     
     x:Name="WindowLayer"
     x:Class="DGP_Snap.MainWindow"
@@ -23,7 +20,7 @@
     Loaded="WindowLayer_Loaded" 
     Background="Black" 
 WindowStyle="None"
-    ResizeMode="NoResize" 
+    ResizeMode="NoResize"
     >
     <Window.Resources>
         <ResourceDictionary>

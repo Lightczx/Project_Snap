@@ -26,17 +26,17 @@ namespace DGP_Daily_V2.Services
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
-        public static async Task<WeatherInformation> GetWeatherInfomationAsync()
+        public static async Task<WeatherQueryData> GetWeatherInfomationAsync()
         {
             Stream xmlstream;
-            WeatherInformation weatherInfomation = new WeatherInformation();
+            WeatherQueryData weatherInfomation = new WeatherQueryData();
             void getstream()
             {
                 xmlstream = GetWeatherInformationFromStream(CityInformation.余姚);
                 if (xmlstream != null)
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(WeatherInformation));
-                    weatherInfomation = (WeatherInformation)xmlSerializer.Deserialize(xmlstream);
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(WeatherQueryData));
+                    weatherInfomation = (WeatherQueryData)xmlSerializer.Deserialize(xmlstream);
                 }
             }
             await Task.Run(() => getstream());
@@ -99,8 +99,8 @@ namespace DGP_Daily_V2.Services
             return CityInformation.北京;
         }
 
-        private WeatherInformation _weatherInformation=null;
-        public WeatherInformation WeatherInformation
+        private WeatherQueryData _weatherInformation=null;
+        public WeatherQueryData WeatherInformation
         {
             get
             {

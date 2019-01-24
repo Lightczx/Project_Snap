@@ -33,18 +33,18 @@ namespace DGP_Snap.Views
             BaseControl.WeatherInformation = WeatherInformation;
         }
 
-        public WeatherInformation WeatherInformation
+        public WeatherQueryData WeatherInformation
         {
             get
             {
-                return GetValue(WeatherInformationProperty) as WeatherInformation;
+                return GetValue(WeatherInformationProperty) as WeatherQueryData;
             }
             set
             {
                 SetValue(WeatherInformationProperty, value);
             }
         }
-        public static readonly DependencyProperty WeatherInformationProperty = DependencyProperty.Register("WeatherInformation", typeof(WeatherInformation), typeof(WeatherView), new PropertyMetadata(null));
+        public static readonly DependencyProperty WeatherInformationProperty = DependencyProperty.Register("WeatherInformation", typeof(WeatherQueryData), typeof(WeatherView), new PropertyMetadata(null));
 
         private async void BaseControl_Loaded(object sender, RoutedEventArgs e)
         {

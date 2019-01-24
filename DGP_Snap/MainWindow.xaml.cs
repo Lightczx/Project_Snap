@@ -63,8 +63,11 @@ namespace DGP_Snap
         #endregion
 
         //退出程序
-        private void CloseButton_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
-
+        private async void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            await SettingsStorage.SaveSettingsAsync();
+            Application.Current.Shutdown();
+        }
 
         private async void WindowLayer_Loaded(object sender, RoutedEventArgs e)
         {
@@ -184,6 +187,9 @@ namespace DGP_Snap
             //Selected = navigationView.MenuItems.OfType<NavigationViewItem>().FirstOrDefault(menuItem => IsMenuItemForPageType(menuItem, e.SourcePageType));
         }
 
-        
+        private async void WindowLayer_Unloaded(object sender, RoutedEventArgs e)
+        {
+            await SettingsStorage.SaveSettingsAsync();
+        }
     }
 }
