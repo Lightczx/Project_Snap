@@ -39,7 +39,6 @@ namespace DGP_Snap.Helpers
                     
                     //await sw.WriteLineAsync("aaa");
                     await sw.WriteAsync(await Json.StringifyAsync(AppSettings));
-                    
                 }
 
             }

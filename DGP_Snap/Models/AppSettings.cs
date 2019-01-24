@@ -15,56 +15,78 @@ namespace DGP_Snap.Models
 
     [JsonObject("AppSettings")]
     public class AppSettings
+    { 
+        public Generic Generic { get; set; }
+    }
+
+    [JsonObject("Generic")]
+    public class Generic
     {
-        public AppSettings() { }
-        [JsonObject("Generic")]
-        public class Generic
-        {
-            [JsonObject("UISettings")]
-            public class UISettings
-            {
-                [JsonObject("ThemeSettings")]
-                public class ThemeSettings
-                {
-                    [JsonProperty("ThemeMode")]
-                    public ThemeMode ThemeMode { get; set; }
-                }
-                [JsonObject("NavigationViewSettiing")]
-                public class NavigationViewSettiing
-                {
-                    [JsonProperty("NavigationPaneOpacity")]
-                    public double NavigationPaneOpacity  { get;set; }
-                }
-            }
-            [JsonObject("WwallpaperSettings")]
-            public class WwallpaperSettings
-            {
-                public class ImagegModeSettngs
-                {
-                    public class WebImageSettings
-                    {
-                        public class RequestQueueSettings
-                        {
-                            public bool IsBingOnRequestQueue;
+        public UISettings UISettings { get; set; }
+        [JsonProperty("WallpaperSettings")]
+        public WallpaperSettings WallpaperSettings { get; set; }
+    }
 
-                            public bool Is360OnRequestQueue;
+    [JsonObject("UISettings")]
+    public class UISettings
+    {
+        [JsonProperty("ThemeSettings")]
+        public ThemeSettings ThemeSettings { get; set; }
+        [JsonProperty("NavigationViewSettiing")]
+        public NavigationViewSettiing NavigationViewSettiing { get; set; }
+    }
+   
+    public class ThemeSettings
+    {
+        [JsonProperty("ThemeMode")]
+        public ThemeMode ThemeMode { get; set; }
+    }
 
-                            public bool IsBaiduOnRequestQueue;
+    public class NavigationViewSettiing
+    {
+        [JsonProperty("NavigationPaneOpacity")]
+        public double NavigationPaneOpacity { get; set; }
+    }
+    
+    public class WallpaperSettings
+    {
+        [JsonProperty("ImageModeSettngs")]
+        public ImageModeSettngs ImagegModeSettngs { get; set; }
+    }
+    
+    public class ImageModeSettngs
+    {
+        [JsonProperty("WebImageSettings")]
+        public WebImageSettings WebImageSettings { get; set; }
+        [JsonProperty("LocalImageSettings")]
+        public LocalImageSettings LocalImageSettings { get; set; }
+    }
 
-                            public bool IsSougouOnRequestQueue;
-                        }
+    public class WebImageSettings
+    {
+        [JsonProperty("RequestQueueSettings")]
+        RequestQueueSettings RequestQueueSettings { get; set; }
+        [JsonProperty("RestoredFolderPath")]
+        public string RestoredFolderPath;
+        [JsonProperty("SwitchIntervalByMinutes")]
+        public double SwitchIntervalByMinutes;
+    }
 
-                        public string RestoredFolderPath;
+    public class RequestQueueSettings
+    {
+        [JsonProperty("IsBingOnRequestQueue")]
+        public bool IsBingOnRequestQueue;
+        [JsonProperty("Is360OnRequestQueue")]
+        public bool Is360OnRequestQueue;
+        [JsonProperty("IsBaiduOnRequestQueue")]
+        public bool IsBaiduOnRequestQueue;
+        [JsonProperty("IsSougouOnRequestQueue")]
+        public bool IsSougouOnRequestQueue;
+    }
 
-                        public double SwitchIntervalByMinutes;
-                    }
-
-                    public class LocalImageSettings
-                    {
-                        public string LoadFromFolderPath;
-                    }
-                }
-            }
-        }
+    public class LocalImageSettings
+    {
+        [JsonProperty("LoadFromFolderPath")]
+        public string LoadFromFolderPath;
     }
 }

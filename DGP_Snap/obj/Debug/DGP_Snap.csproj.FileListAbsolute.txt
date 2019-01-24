@@ -71,3 +71,4 @@ D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.csproj.CopyComplete
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.exe
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.pdb
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
+D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
