@@ -3,6 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
       xmlns:local="clr-namespace:DGP_Snap.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -21,8 +23,9 @@
                         Text="背景"
                         Style="{StaticResource SubtitleTextBlockStyle}"/>
                     <StackPanel Margin="{StaticResource EightTopMargin}">
-                        <RadioButton x:Name="WallPaperOnRadioButton" Content="壁纸" IsChecked="True" GroupName="BackgroundTypeGroup" Foreground="White" Style="{DynamicResource DefaultRadioButton}" />
-
+                        <!--<RadioButton x:Name="WallPaperOnRadioButton" Content="壁纸" IsChecked="True" GroupName="BackgroundTypeGroup" Foreground="White" Style="{DynamicResource DefaultRadioButton}" />-->
+                        <mah:ToggleSwitch  Foreground="White" Background="White" Header="壁纸" IsChecked="True" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" HorizontalAlignment="Left"/>
+                        <Slider Margin="16,8" Style="{StaticResource MahApps.Metro.Styles.Slider.Win10}" Value="{Binding ImageLightness}" Maximum="1"/>
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="切换时间" Margin="16,8,0,0"/>
                         <ComboBox Margin="16,8,0,0" Width="240" HorizontalAlignment="Left" ></ComboBox>
                         <RadioButton Content="联机" IsChecked="True" IsEnabled="{Binding ElementName=WallPaperOnRadioButton,Path=IsChecked}" GroupName="WallPaperLocationTypeGroup" Foreground="White" Margin="16,8,0,0" Style="{DynamicResource DefaultRadioButton}"/>

@@ -45,13 +45,14 @@ namespace DGP_Snap.Service
             List<Uri> imageSourceCollection = new List<Uri>();
 
             WallPaper360JsonInfo wallPaper360JsonInfo = (await GetRequestWallPaperImageJsonInfoAsync());
+            
             foreach (DataItemFor360 dataItem in wallPaper360JsonInfo.Data)
             {
                 //restriction
                 if (!(
                     dataItem.Tag.Contains("性感") ||
-                    //dataItem.Tag.Contains("卡通") ||
-                    //dataItem.Tag.Contains("动漫") ||
+                    dataItem.Tag.Contains("卡通") ||
+                    dataItem.Tag.Contains("动漫") ||
                     dataItem.Tag.Contains("游戏") ||
                     dataItem.Tag.Contains("美女") ||
                     dataItem.Tag.Contains("月历") ||

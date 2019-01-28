@@ -35,6 +35,8 @@ namespace DGP_Snap
 
         public HamburgerMenuItem Selected { get; private set; }
 
+        //public string Load { get { return SettingsStorage.AppSettings.Generic.WallpaperSettings.ImagegModeSettngs.LocalImageSettings.LoadFromFolderPath; } set { SettingsStorage.AppSettings.Generic.WallpaperSettings.ImagegModeSettngs.LocalImageSettings.LoadFromFolderPath = value; } }
+
         public MainWindow()
         {
 

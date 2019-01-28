@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800" 
              x:Name="Root" Loaded="Root_Loaded">
     <Grid Background="Black">
-        <Image x:Name="WallPaperImage" Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Image x:Name="WallPaperImage"  Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <Rectangle Fill="#7F000000"/>
     </Grid>
 </UserControl>
