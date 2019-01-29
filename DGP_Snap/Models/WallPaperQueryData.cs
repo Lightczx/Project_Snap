@@ -110,7 +110,7 @@ namespace DGP_Snap.Models
         [JsonProperty("column")] public string Column { get; set; }
         [JsonProperty("parentTag")] public string ParentTag { get; set; }
         [JsonProperty("date")] public string Date { get; set; }
-        [JsonProperty("downloadUrl")] public string D7ownloadUrl { get; set; }
+        [JsonProperty("downloadUrl")] public string DlownloadUrl { get; set; }
         [JsonProperty("imageUrl")] public string ImageUrl { get; set; }
         [JsonProperty("imageWidth")] public int ImageWidth { get; set; }
         [JsonProperty("imageHeight")] public int ImageHeight { get; set; }

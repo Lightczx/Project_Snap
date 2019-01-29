@@ -61,8 +61,8 @@ namespace DGP_Snap.Views
             //try
             //{
             ImageUriCollection = await WallPaperService.GetWallPaperImageSourceCollectionAsync();
-            //List<Uri> WallpaperFrom360 = 
-            //    ImageUriCollection = ImageUriCollection.Union(WallpaperFrom360).ToList();
+            List<Uri> WallpaperFromBaidu = await WallPaperService.GetBaiduImageSourceCollectionAsync();
+                ImageUriCollection = ImageUriCollection.Union(WallpaperFromBaidu).ToList();
 
                 SwitchRandomWallPaper();
                 //GetAllWallpaper();
