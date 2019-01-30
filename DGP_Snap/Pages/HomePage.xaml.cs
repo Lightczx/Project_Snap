@@ -1,4 +1,4 @@
-﻿using DGP_Daily_V2.Models;
+﻿using DGP_Snap.Models;
 using DGP_Snap.Helpers;
 using DGP_Snap.Service;
 using System;
@@ -20,8 +20,7 @@ namespace DGP_Snap.Pages
     /// </summary>
     public partial class HomePage : Page,INotifyPropertyChanged
     {
-
-        //INotifyPropertyChanged实现
+        #region INotifyPropertyChanged实现
         public event PropertyChangedEventHandler PropertyChanged;
         private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
         {
@@ -33,6 +32,7 @@ namespace DGP_Snap.Pages
             OnPropertyChanged(propertyName);
         }
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        #endregion
 
         private DispatcherTimer innerTimer = new DispatcherTimer(DispatcherPriority.Send);
 
@@ -71,7 +71,9 @@ namespace DGP_Snap.Pages
         }
         private string _presentDateString;
 
-        private string _presentTimeSpanString;
+        /// <summary>
+        /// Snap: 显示的倒计时
+        /// </summary>
         public string PresentTimeSpanString
         {
             get
@@ -83,14 +85,15 @@ namespace DGP_Snap.Pages
                 Set(ref _presentTimeSpanString, value);
             }
         }
+        private string _presentTimeSpanString;
 
         private string GetTimeSpan()
         {
             DateTime t0 = new DateTime(2019, 6, 7);
-            DateTime t1 = new DateTime(2019, 4, 7);
+            DateTime t1 = new DateTime(2019, 4, 6);
             string GaokaoTimeSpan = (t0 - CurrentDateTime).Days.ToString();
             string XuanKaoTimeSpan = (t1 - CurrentDateTime).Days.ToString();
-            return $"高考/选考  {GaokaoTimeSpan}/{XuanKaoTimeSpan}  天";
+            return $"高考 / 选考    {GaokaoTimeSpan} / {XuanKaoTimeSpan}  天";
         }
 
         public HomePage()
@@ -104,12 +107,9 @@ namespace DGP_Snap.Pages
             innerTimer.Start();
         }
 
-        private void OnInnerTimerTicked(object sender, EventArgs e)
-        {
-            UpdateTime();
-        }
+        private void OnInnerTimerTicked(object sender, EventArgs e) => UpdatePresentTime();
 
-        private void UpdateTime()
+        private void UpdatePresentTime()
         {
             CurrentDateTime = DateTime.Now;
             PresentTimeSpanString = GetTimeSpan();
@@ -122,6 +122,8 @@ namespace DGP_Snap.Pages
 
             PresentDateString = $"{DayOfWeek} - {Month} {DayOfMonth}";
         }
+
+        #region 输出格式化方法
 
         private string MonthToEnglish(int Month)
         {
@@ -176,5 +178,7 @@ namespace DGP_Snap.Pages
             }
             return string.Empty;
         }
+
+        #endregion
     }
 }

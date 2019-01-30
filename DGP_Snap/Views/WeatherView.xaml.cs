@@ -1,19 +1,7 @@
-﻿using DGP_Daily_V2.Models;
-using DGP_Daily_V2.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DGP_Snap.Models;
+using DGP_Snap.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DGP_Snap.Views
 {
@@ -33,22 +21,24 @@ namespace DGP_Snap.Views
             BaseControl.WeatherInformation = WeatherInformation;
         }
 
-        public WeatherQueryData WeatherInformation
+        public WeatherQueryModel WeatherInformation
         {
             get
             {
-                return GetValue(WeatherInformationProperty) as WeatherQueryData;
+                return GetValue(WeatherInformationProperty) as WeatherQueryModel;
             }
             set
             {
                 SetValue(WeatherInformationProperty, value);
             }
         }
-        public static readonly DependencyProperty WeatherInformationProperty = DependencyProperty.Register("WeatherInformation", typeof(WeatherQueryData), typeof(WeatherView), new PropertyMetadata(null));
+        public static readonly DependencyProperty WeatherInformationProperty = DependencyProperty.Register("WeatherInformation", typeof(WeatherQueryModel), typeof(WeatherView), new PropertyMetadata(null));
 
         private async void BaseControl_Loaded(object sender, RoutedEventArgs e)
         {
             WeatherInformation = await WeatherInformationService.GetWeatherInfomationAsync();
         }
+
+
     }
 }

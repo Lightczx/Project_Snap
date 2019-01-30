@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace DGP_Daily_V2.Helpers
+namespace DGP_Snap.Helpers
 {
     public static class Json
     {

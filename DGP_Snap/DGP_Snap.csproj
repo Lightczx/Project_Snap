@@ -119,10 +119,11 @@
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Extension.cs" />
     <Compile Include="Helpers\NativeMethods.cs" />
+    <Compile Include="Helpers\WebRequestHelper.cs" />
     <Compile Include="Models\AppSettings.cs" />
     <Compile Include="Models\CityInformation.cs" />
-    <Compile Include="Models\WallPaperQueryData.cs" />
-    <Compile Include="Models\WeatherQueryData.cs" />
+    <Compile Include="Models\WallPaperQueryModel.cs" />
+    <Compile Include="Models\WeatherQueryModel.cs" />
     <Compile Include="Pages\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>

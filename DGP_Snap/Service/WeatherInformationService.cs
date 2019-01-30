@@ -1,4 +1,4 @@
-﻿using DGP_Daily_V2.Models;
+﻿using DGP_Snap.Models;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace DGP_Daily_V2.Services
+namespace DGP_Snap.Services
 {
     public class WeatherInformationService : INotifyPropertyChanged
     {
@@ -26,17 +26,17 @@ namespace DGP_Daily_V2.Services
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
-        public static async Task<WeatherQueryData> GetWeatherInfomationAsync()
+        public static async Task<WeatherQueryModel> GetWeatherInfomationAsync()
         {
             Stream xmlstream;
-            WeatherQueryData weatherInfomation = new WeatherQueryData();
+            WeatherQueryModel weatherInfomation = new WeatherQueryModel();
             void getstream()
             {
                 xmlstream = GetWeatherInformationFromStream(CityInformation.余姚);
                 if (xmlstream != null)
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(WeatherQueryData));
-                    weatherInfomation = (WeatherQueryData)xmlSerializer.Deserialize(xmlstream);
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(WeatherQueryModel));
+                    weatherInfomation = (WeatherQueryModel)xmlSerializer.Deserialize(xmlstream);
                 }
             }
             await Task.Run(() => getstream());
@@ -99,8 +99,8 @@ namespace DGP_Daily_V2.Services
             return CityInformation.北京;
         }
 
-        private WeatherQueryData _weatherInformation=null;
-        public WeatherQueryData WeatherInformation
+        private WeatherQueryModel _weatherInformation=null;
+        public WeatherQueryModel WeatherInformation
         {
             get
             {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DGP_Daily_V2.Models
+namespace DGP_Snap.Models
 {
     public enum CityInformation
     {

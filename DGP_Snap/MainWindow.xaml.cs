@@ -1,4 +1,4 @@
-﻿using DGP_Daily_V2.Models;
+﻿using DGP_Snap.Models;
 using DGP_Snap.Helpers;
 using DGP_Snap.Pages;
 using DGP_Snap.Service;

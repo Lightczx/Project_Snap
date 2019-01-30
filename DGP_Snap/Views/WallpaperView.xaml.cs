@@ -45,7 +45,7 @@ namespace DGP_Snap.Views
             SwitchRandomWallPaper();
         }
 
-        public List<Uri> ImageUriCollection { get; set; }
+        public List<Uri> ImageUriCollection { get; set; } = new List<Uri>();
 
         private ImageSource _currentImageSource;
         public ImageSource CurrentImageSource
@@ -57,20 +57,10 @@ namespace DGP_Snap.Views
 
         private async Task InitializeWallpaperAsync()
         {
-
-            //try
-            //{
-            ImageUriCollection = await WallPaperService.GetWallPaperImageSourceCollectionAsync();
-            List<Uri> WallpaperFromBaidu = await WallPaperService.GetBaiduImageSourceCollectionAsync();
-                ImageUriCollection = ImageUriCollection.Union(WallpaperFromBaidu).ToList();
-
-                SwitchRandomWallPaper();
-                //GetAllWallpaper();
-            //}
-            //catch
-            //{
-            //    Debug.WriteLine("Snap: 异步获取图片时出错");
-            //}
+            ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBaiduImageUriCollectionAsync()).ToList();
+            ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();
+            ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBingImageUriCollectionAsync()).ToList();
+            SwitchRandomWallPaper();
 
         }
 

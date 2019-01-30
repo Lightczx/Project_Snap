@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DGP_Snap.Views"
-             xmlns:Services="clr-namespace:DGP_Daily_V2.Services" 
              x:Class="DGP_Snap.Views.WeatherView"
              mc:Ignorable="d" 
              d:DesignWidth="800"
@@ -61,7 +60,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="48"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="339*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Image Height="48" Width="48" Source="/DGP_Snap;component/Resources/WeatherIcon/cond_icon_999.png" HorizontalAlignment="Left" Grid.RowSpan="2"/>
             <StackPanel Visibility="Hidden" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="12,0,0,0">
