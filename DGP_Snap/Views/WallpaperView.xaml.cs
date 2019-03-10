@@ -58,7 +58,7 @@ namespace DGP_Snap.Views
         private async Task InitializeWallpaperAsync()
         {
             ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBaiduImageUriCollectionAsync()).ToList();
-            ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();
+            //ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();
             ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBingImageUriCollectionAsync()).ToList();
             SwitchRandomWallPaper();
 
@@ -124,6 +124,11 @@ namespace DGP_Snap.Views
         private async void Root_Loaded(object sender, RoutedEventArgs e)
         {
             await InitializeWallpaperAsync();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SwitchRandomWallPaper();
         }
     }
 }

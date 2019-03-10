@@ -12,6 +12,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.IO;
+using System.Text;
 
 namespace DGP_Snap.Pages
 {
@@ -180,5 +182,27 @@ namespace DGP_Snap.Pages
         }
 
         #endregion
+
+        private void TextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            string path= Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "strings.txt");
+            //((TextBlock)sender).Text = File.ReadAllText(path);
+            using (FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                StreamReader streamReader = new StreamReader(fileStream, Encoding.Default/*GetEncoding("GBK")*/,true);
+                //char[] buffer = new char[streamReader.BaseStream.Length];
+                //streamReader.Read(buffer, 0, (int)streamReader.BaseStream.Length);
+                string content;
+                string conj=string.Empty;
+                while ((content = streamReader.ReadLine()) != null)
+                {
+                    conj +="\n" +content.ToString();
+                }
+
+
+                ((TextBlock)sender).Text = conj;//streamReader.ReadLine().ToString();
+                streamReader.Close();
+            }
+        }
     }
 }

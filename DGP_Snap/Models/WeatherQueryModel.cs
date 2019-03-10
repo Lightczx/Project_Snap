@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Media;
 using System.Xml.Serialization;
 
 namespace DGP_Snap.Models
@@ -82,6 +83,11 @@ namespace DGP_Snap.Models
     
     public class WeatherDayHalf
     {
+        //public ImageSource WeatherImageSource
+        //{
+        //    get { }
+        //    set;
+        //}
         [XmlElement(ElementName = "type")]public string State { get; set; }//天气状况
         [XmlElement(ElementName = "fengxiang")]public string Direction { get; set; }//风向
         [XmlElement(ElementName = "fengli")]public string Power { get; set; } //风力

@@ -23,6 +23,10 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="48"/>
+        </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Tag="倒计时">
                 <TextBlock x:Name="TimeSpanPresenter" 
                     Text="{Binding PresentTimeSpanString}" 
@@ -68,8 +72,12 @@
             <Grid Grid.Row="2">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,24,0,0">
                     <!--<TextBlock/>-->
-                    <views:WeatherView x:Name="WeatherView" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
+                <Rectangle Height="1" Fill="White" Opacity="0.6"/>
+                <Grid HorizontalAlignment="Center" MaxWidth="750">
+                    <TextBlock Opacity="0.8" TextAlignment="Left" Style="{StaticResource CaptionTextBlockStyle}" Margin="0,-20,0,0" FontSize="28" Loaded="TextBlock_Loaded"/>
+                </Grid>
+                <Rectangle Height="1" Margin="0,24,0,0" Fill="White" Opacity="0.6"/>
+            </StackPanel>
             </Grid>
         </Grid>
         

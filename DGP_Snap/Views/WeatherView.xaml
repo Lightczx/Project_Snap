@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignWidth="800"
              x:Name="BaseControl"
-             Height="124" Loaded="BaseControl_Loaded"
+             Height="300" Loaded="BaseControl_Loaded"
              >
     <StackPanel>
         <Grid Margin="4">
@@ -87,6 +87,123 @@
             <StackPanel  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Grid.Row="1">
                 <TextBlock 
                     Text="{Binding WeatherInformation.Forecast.Weathers[1].Day.State, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+        </Grid>
+        <Grid Margin="4" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="48" Width="48" Source="/DGP_Snap;component/Resources/WeatherIcon/cond_icon_999.png" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <StackPanel Visibility="Hidden" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="12,0,0,0">
+                <TextBlock 
+                    Tag="实时温度" 
+                    Text="{Binding WeatherInformation.RealTimeTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text="°" Foreground="White" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Column="2" Margin="12,0,0,0">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[2].LowTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text=" ~ " Foreground="White" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[2].HighTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+
+            <StackPanel  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Grid.Row="1">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[2].Day.State, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+        </Grid>
+        <Grid Margin="4" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="48" Width="48" Source="/DGP_Snap;component/Resources/WeatherIcon/cond_icon_999.png" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <StackPanel Visibility="Hidden" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="12,0,0,0">
+                <TextBlock 
+                    Tag="实时温度" 
+                    Text="{Binding WeatherInformation.RealTimeTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text="°" Foreground="White" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Column="2" Margin="12,0,0,0">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[3].LowTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text=" ~ " Foreground="White" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[3].HighTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+
+            <StackPanel  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Grid.Row="1">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[3].Day.State, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+        </Grid>
+        <Grid Margin="4" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="48" Width="48" Source="/DGP_Snap;component/Resources/WeatherIcon/cond_icon_999.png" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <StackPanel Visibility="Hidden" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="12,0,0,0">
+                <TextBlock 
+                    Tag="实时温度" 
+                    Text="{Binding WeatherInformation.RealTimeTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text="°" Foreground="White" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Column="2" Margin="12,0,0,0">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[4].LowTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock Text=" ~ " Foreground="White" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[4].HighTemp, ElementName=BaseControl}" 
+                    Foreground="White" 
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+
+            <StackPanel  Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Grid.Row="1">
+                <TextBlock 
+                    Text="{Binding WeatherInformation.Forecast.Weathers[4].Day.State, ElementName=BaseControl}" 
                     Foreground="White" 
                     Style="{StaticResource SubtitleTextBlockStyle}" />
             </StackPanel>

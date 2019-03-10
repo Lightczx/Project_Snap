@@ -9,6 +9,7 @@
              x:Name="Root" Loaded="Root_Loaded">
     <Grid Background="Black">
         <Image x:Name="WallPaperImage"  Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Rectangle Fill="#7F000000"/>
+        <Rectangle Fill="#99000000"/>
+        <Button Margin="0,0,0,8" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click" Content="&#xEB9F;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
     </Grid>
 </UserControl>
