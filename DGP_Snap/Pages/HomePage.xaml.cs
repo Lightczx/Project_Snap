@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.IO;
 using System.Text;
+using MahApps.Metro.Controls;
+using DGP_Snap.Views;
 
 namespace DGP_Snap.Pages
 {
@@ -181,28 +183,12 @@ namespace DGP_Snap.Pages
             return string.Empty;
         }
 
+
         #endregion
 
-        private void TextBlock_Loaded(object sender, RoutedEventArgs e)
+        private void TransitioningContentControl_Loaded(object sender, RoutedEventArgs e)
         {
-            string path= Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "strings.txt");
-            //((TextBlock)sender).Text = File.ReadAllText(path);
-            using (FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                StreamReader streamReader = new StreamReader(fileStream, Encoding.Default/*GetEncoding("GBK")*/,true);
-                //char[] buffer = new char[streamReader.BaseStream.Length];
-                //streamReader.Read(buffer, 0, (int)streamReader.BaseStream.Length);
-                string content;
-                string conj=string.Empty;
-                while ((content = streamReader.ReadLine()) != null)
-                {
-                    conj +="\n" +content.ToString();
-                }
-
-
-                ((TextBlock)sender).Text = conj;//streamReader.ReadLine().ToString();
-                streamReader.Close();
-            }
+            ((TransitioningContentControl)sender).Content = new MottoView();
         }
     }
 }

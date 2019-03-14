@@ -10,12 +10,15 @@ namespace DGP_Snap.Helpers
     {
 
         private static readonly Random random = new Random();
+        public static int CurrentIndex { get { return currentValue; } private set { } }
+        public static int currentValue;
 
         public static T GetRandom<T>(this List<T> list)
         {
             if (list == null || list.Count == 0)
                 return default(T);
-            return list[random.Next(0, list.Count)];
+            currentValue = random.Next(0, list.Count);
+            return list[currentValue];
         }
 
         public static List<T> SubArray<T>(this List<T> list, int startIndex, int length = -1)

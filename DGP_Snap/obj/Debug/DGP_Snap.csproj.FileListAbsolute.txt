@@ -71,4 +71,6 @@ D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.csproj.CopyComplete
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.exe
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.pdb
 D:\GitFile\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache
+D:\soft\Snap\DGP_Snap\obj\Debug\Views\MottoView.g.cs
+D:\soft\Snap\DGP_Snap\obj\Debug\Views\MottoView.baml
 D:\soft\Snap\DGP_Snap\obj\Debug\DGP_Snap.csprojAssemblyReference.cache

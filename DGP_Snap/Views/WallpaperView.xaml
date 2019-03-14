@@ -8,8 +8,16 @@
              d:DesignHeight="450" d:DesignWidth="800" 
              x:Name="Root" Loaded="Root_Loaded">
     <Grid Background="Black">
-        <Image x:Name="WallPaperImage"  Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Rectangle Fill="#99000000"/>
-        <Button Margin="0,0,0,8" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click" Content="&#xEB9F;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
+        <Image x:Name="WallPaperImage" Stretch="UniformToFill" Source="{Binding CurrentImageSource}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+
+        <Rectangle Opacity="0.55" Name="OpacityMaskRect" Fill="Black"/>
+        <TextBlock Opacity="0.8" Margin="48,0,384,19" Foreground="White" Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Bottom" Text="{Binding CurrentImageDescription}" TextTrimming="CharacterEllipsis" Height="26"/>
+        <StackPanel Margin="48,0,0,8" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <TextBlock Width="48" FontSize="16" TextAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="{StaticResource Icon_Font}" Text="&#xF08C;"/>
+            <Slider Minimum="0" Maximum="1" Width="240" Value="{Binding ElementName=OpacityMaskRect,Path=Opacity}" Style="{StaticResource MahApps.Metro.Styles.Slider.Win10}"/>
+            <Button Name="DownloadWallPaperButton" Margin="0" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="DownloadWallPaperButton_Click" Content="&#xE896;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
+            <Button Name="SwitchWallPaperButton" Margin="0" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SwitchWallPaperButton_Click" Content="&#xEB9F;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

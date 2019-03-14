@@ -140,6 +140,9 @@
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />
+    <Compile Include="Views\MottoView.xaml.cs">
+      <DependentUpon>MottoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WallpaperView.xaml.cs">
       <DependentUpon>WallpaperView.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MottoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

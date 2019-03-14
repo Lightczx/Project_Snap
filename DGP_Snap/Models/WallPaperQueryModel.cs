@@ -27,7 +27,8 @@ namespace DGP_Snap.Models
         [JsonProperty("url_mid")]           public string Url_mid { get; set; }
         [JsonProperty("download_times")]    public string Download_times { get; set; }
         [JsonProperty("imgcut")]            public string Imgcut { get; set; }
-        [JsonProperty("tag")]               public string Tag { get; set; }
+        private string tag;
+        [JsonProperty("tag")]               public string Tag { get { return tag; } set {tag = value.Replace("_", "").Replace("category", ""); } }
         [JsonProperty("create_time")]       public string Create_time { get; set; }
         [JsonProperty("update_time")]       public string Update_time { get; set; }
         [JsonProperty("ad_id")]             public string Ad_id { get; set; }

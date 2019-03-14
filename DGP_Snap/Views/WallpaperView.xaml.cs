@@ -13,7 +13,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -26,7 +25,7 @@ namespace DGP_Snap.Views
     /// <summary>
     /// WallpaperView.xaml 的交互逻辑
     /// </summary>
-    public partial class WallpaperView : System.Windows.Controls.UserControl, INotifyPropertyChanged
+    public partial class WallpaperView : UserControl, INotifyPropertyChanged
     {
         private DispatcherTimer innerTimer=new DispatcherTimer(DispatcherPriority.Send);
 
@@ -38,6 +37,7 @@ namespace DGP_Snap.Views
             innerTimer.Tick += OnInnerTimerTicked;
             innerTimer.Interval = TimeSpan.FromMinutes(5.0);
             innerTimer.Start();
+
         }
 
         private void OnInnerTimerTicked(object sender, EventArgs e)
@@ -46,6 +46,19 @@ namespace DGP_Snap.Views
         }
 
         public List<Uri> ImageUriCollection { get; set; } = new List<Uri>();
+
+        private string _imageDescription=string.Empty;
+        public string CurrentImageDescription
+        {
+            get
+            {
+                return _imageDescription;
+            }
+            set
+            {
+                Set(ref _imageDescription, value);
+            }
+        }
 
         private ImageSource _currentImageSource;
         public ImageSource CurrentImageSource
@@ -58,8 +71,9 @@ namespace DGP_Snap.Views
         private async Task InitializeWallpaperAsync()
         {
             ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBaiduImageUriCollectionAsync()).ToList();
-            //ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();
+            ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();
             ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBingImageUriCollectionAsync()).ToList();
+
             SwitchRandomWallPaper();
 
         }
@@ -70,6 +84,7 @@ namespace DGP_Snap.Views
             {
                 CurrentImageUri = ImageUriCollection.GetRandom();
                 CurrentImageSource = new BitmapImage(CurrentImageUri);
+                CurrentImageDescription = WallPaperService.ImageDescriptionCollection[ListExtension.CurrentIndex]; 
             }
             catch
             {
@@ -126,9 +141,27 @@ namespace DGP_Snap.Views
             await InitializeWallpaperAsync();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SwitchWallPaperButton_Click(object sender, RoutedEventArgs e) => SwitchRandomWallPaper();
+
+        private void DownloadWallPaperButton_Click(object sender, RoutedEventArgs e)
         {
-            SwitchRandomWallPaper();
+            using (WebClient webClient = new WebClient())
+            {
+                string fileName = DateTimeOffset.Now.Date.ToShortDateString().Replace("/", "-") + DateTimeOffset.Now.TimeOfDay.ToString().Replace(":","-");
+                string path = FileAccessHelper.GetFilePickerPath("png 文件 (*.png)|*.png|All files (*.*)|*.*", fileName);
+
+                if (path != null && CurrentImageUri != null)
+                {
+                    try
+                    {
+                        webClient.DownloadFile(CurrentImageUri.OriginalString,path);
+                    }
+                    catch (WebException)
+                    {
+                        Debug.WriteLine("网络出错");
+                    }
+                }
+            }
         }
     }
 }
