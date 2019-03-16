@@ -42,26 +42,6 @@ WindowStyle="None"
             <ItemContainerTemplate x:Key="MenuButtonTemplate">
                 <TextBlock Foreground="White" Style="{StaticResource BodyTextBlockStyle}" FontSize="16" FontFamily="{StaticResource Icon_Font}"  Text="&#xE700;"/>
             </ItemContainerTemplate>
-            <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
-                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-                    <Grid>
-                        <AdornerDecorator>
-                            <ContentPresenter/>
-                        </AdornerDecorator>
-                        <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
-                    </Grid>
-                </Border>
-                <ControlTemplate.Triggers>
-                    <MultiTrigger>
-                        <MultiTrigger.Conditions>
-                            <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
-                            <Condition Property="WindowState" Value="Normal"/>
-                        </MultiTrigger.Conditions>
-                        <Setter Property="Visibility" TargetName="WindowResizeGrip" Value="Visible"/>
-                    </MultiTrigger>
-                </ControlTemplate.Triggers>
-            </ControlTemplate>
-
 
         </ResourceDictionary>
 
@@ -74,7 +54,7 @@ WindowStyle="None"
             ItemTemplate="{DynamicResource MenuItemDataTemplate}" 
             
             HamburgerButtonTemplate="{DynamicResource MenuButtonTemplate}"
-            PaneBackground="#5F000000"
+            PaneBackground="#00000000"
             SelectedIndex="0"
             ItemInvoked="NavigationView_ItemInvoked"
             DisplayMode="CompactOverlay"
@@ -109,6 +89,37 @@ WindowStyle="None"
             </Frame>
         </mah:HamburgerMenu>
         <Grid>
+            <Grid x:Name="HoverGrid" Background="Black" Opacity="1">
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Grid.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation BeginTime="0:0:3" Duration="0:0:1" Storyboard.TargetName="HoverGrid" Storyboard.TargetProperty="Opacity" To="0">
+                                    <DoubleAnimation.EasingFunction >
+                                        <QuadraticEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverGrid"  Storyboard.TargetProperty="Visibility" Duration="0:0:4">  
+                                <ObjectAnimationUsingKeyFrames.KeyFrames>  
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:4" >  
+                                        <DiscreteObjectKeyFrame.Value>  
+                                            <Visibility>Collapsed</Visibility>  
+                                        </DiscreteObjectKeyFrame.Value>  
+                                    </DiscreteObjectKeyFrame>                                                      
+                                </ObjectAnimationUsingKeyFrames.KeyFrames>  
+                        </ObjectAnimationUsingKeyFrames>  
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="160" Source="Resources/dgp-白.png" Stretch="Uniform"/>
+                <mah:ProgressRing Margin="0,320,0,0" IsActive="True"/>
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="0,480,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Version 1.8 Build 20190316" Foreground="White"/>
+            </Grid>
             <Button 
                             x:Name="CloseButton" 
                             Foreground="Red"

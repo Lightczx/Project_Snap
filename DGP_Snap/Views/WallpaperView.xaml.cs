@@ -163,5 +163,26 @@ namespace DGP_Snap.Views
                 }
             }
         }
+
+        private async void ToggleSwitch_IsCheckedChanged(object sender, EventArgs e)
+        {
+            if (sender != null)
+            {
+                ImageUriCollection = new List<Uri>();
+                if (Switch360.IsChecked == true)
+                {
+                    ImageUriCollection = ImageUriCollection.Union(await WallPaperService.Get360ImageUriCollectionAsync()).ToList();   
+                }
+                if (SwitchBaidu.IsChecked == true)
+                {
+                    ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBaiduImageUriCollectionAsync()).ToList();
+                }
+                if (SwitchBing.IsChecked == true)
+                {
+                    ImageUriCollection = ImageUriCollection.Union(await WallPaperService.GetBingImageUriCollectionAsync()).ToList();
+                }
+            }
+            
+        }
     }
 }
