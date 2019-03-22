@@ -10,11 +10,11 @@ none
 false
 CODE_ANALYSIS;DEBUG;TRACE
 D:\soft\Snap\DGP_Snap\App.xaml
-12-1983823031
+14-1411767640
 
-32-177170141
+34-1351194020
 201705504415
-MainWindow.xaml;Pages\CalendarPage.xaml;Pages\CountdownPage.xaml;Pages\HomePage.xaml;Pages\SettingPage.xaml;Pages\WeatherPage.xaml;Resources\Animations.xaml;Resources\Fonts.xaml;Resources\Styles.xaml;Views\MottoView.xaml;Views\WallpaperView.xaml;Views\WeatherView.xaml;
+MainWindow.xaml;Pages\CalendarPage.xaml;Pages\CountdownPage.xaml;Pages\HomePage.xaml;Pages\SettingPage.xaml;Pages\WallPaperPage.xaml;Pages\WeatherPage.xaml;Resources\Animations.xaml;Resources\Fonts.xaml;Resources\Styles.xaml;Views\ForecastControl.xaml;Views\MottoView.xaml;Views\WallpaperView.xaml;Views\WeatherView.xaml;
 
 False
 

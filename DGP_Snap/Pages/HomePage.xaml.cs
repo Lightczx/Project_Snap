@@ -97,7 +97,17 @@ namespace DGP_Snap.Pages
             DateTime t1 = new DateTime(2019, 4, 6);
             string GaokaoTimeSpan = (t0 - CurrentDateTime).Days.ToString();
             string XuanKaoTimeSpan = (t1 - CurrentDateTime).Days.ToString();
-            return $"高考 / 选考    {GaokaoTimeSpan} / {XuanKaoTimeSpan}  天";
+            if (DateTime.Compare(DateTime.Now, new DateTime(2019, 4, 6)) > 0)
+            {
+                //return $"高考 / 选考    {GaokaoTimeSpan} / {XuanKaoTimeSpan}  天";
+                return $"距高考还有    {GaokaoTimeSpan}    天";
+            }
+            else
+            {
+                //return $"距高考还有    {GaokaoTimeSpan}    天";
+                return $"高考 / 选考    {GaokaoTimeSpan} / {XuanKaoTimeSpan}  天";
+            }
+            
         }
 
         public HomePage()

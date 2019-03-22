@@ -49,7 +49,8 @@
                     FontSize="144" 
                     Margin="0" 
                     Style="{StaticResource HeaderTextBlockStyle}"
-                    Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"
+                    Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" 
+                    FontFamily="/DGP_Snap;component/Resources/Fonts/#郑庆科黄油体Regular 郑庆科黄油体"
                      />
                     <TextBlock 
                     x:Name="DatePresenter"

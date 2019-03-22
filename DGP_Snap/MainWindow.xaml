@@ -65,13 +65,14 @@ WindowStyle="None"
                     <mah:HamburgerMenuIconItem Label="主页" Icon="&#xE80F;" helpers:NavHelper.NavigateTo="{x:Type pages:HomePage}" />
                     <mah:HamburgerMenuIconItem Label="天气" Icon="&#xE753;" helpers:NavHelper.NavigateTo="{x:Type pages:WeatherPage}" />
                     <mah:HamburgerMenuIconItem Label="日历" Icon="&#xE787;" helpers:NavHelper.NavigateTo="{x:Type pages:CalendarPage}" />
+                    <mah:HamburgerMenuIconItem Label="壁纸" Icon="&#xEB9F;" helpers:NavHelper.NavigateTo="{x:Type pages:WallPaperPage}" />
                     <!--<mah:HamburgerMenuIconItem Label="倒计时" Icon="&#xE916;" helpers:NavHelper.NavigateTo="{x:Type pages:CountdownPage}" />-->
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.ItemsSource>
 
             <mah:HamburgerMenu.OptionsItemsSource>
                 <mah:HamburgerMenuItemCollection>
-                    <mah:HamburgerMenuIconItem Label="设置" Icon="&#xE713;"/>
+                    <!--<mah:HamburgerMenuIconItem Label="设置" Icon="&#xE713;"/>-->
                 </mah:HamburgerMenuItemCollection>
             </mah:HamburgerMenu.OptionsItemsSource>
 
@@ -116,9 +117,11 @@ WindowStyle="None"
                         </BeginStoryboard>
                     </EventTrigger>
                 </Grid.Triggers>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="160" Source="Resources/dgp-白.png" Stretch="Uniform"/>
+                <!--<Image HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="160" Source="Resources/dgp-白.png" Stretch="Uniform"/>-->
+                <TextBlock Text="SNAP" FontSize="140" FontFamily="/DGP_Snap;component/Resources/Fonts/#郑庆科黄油体Regular 郑庆科黄油体" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <mah:ProgressRing Margin="0,320,0,0" IsActive="True"/>
-                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="0,480,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Version 1.8 Build 20190316" Foreground="White"/>
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="0,480,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Text="Version 1.8.0.2 Build 20190319" Foreground="White"/>
             </Grid>
             <Button 
                             x:Name="CloseButton" 

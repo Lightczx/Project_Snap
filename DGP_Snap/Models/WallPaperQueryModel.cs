@@ -7,7 +7,13 @@ using Newtonsoft.Json;
 
 namespace DGP_Snap.Models
 {
-    public class WallPaper360JsonObject
+    public class WallpaperInfo
+    {
+        public Uri Uri;
+        public string Description;
+    }
+
+    public class Wallpaper360JsonObject
     {
         [JsonProperty("errno")]             public string Errno { get; set; }
         [JsonProperty("errmsg")]            public string Errmsg { get; set; }
@@ -76,7 +82,7 @@ namespace DGP_Snap.Models
         [JsonProperty("walls")]             public string Walls { get; set; }
     }
 
-    public class BingImageJsonInfo
+    public class BingImageJsonObject
     {
         [JsonProperty("images")]            public List<ImageItemForBing> Images { get; set; }
         [JsonProperty("tooltips")]          public TooltipsForBing Tooltips { get; set; }
@@ -164,7 +170,7 @@ namespace DGP_Snap.Models
         [JsonProperty("title")] public string Title { get; set; }
     }
 
-    public class BaiduImageJsonInfo
+    public class BaiduImageJsonObject
     {
         [JsonProperty("col")] public string Col { get; set; }
         [JsonProperty("tag")] public string Tag { get; set; }

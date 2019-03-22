@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              d:DesignWidth="800"
              x:Name="BaseControl"
-             Height="300" Loaded="BaseControl_Loaded"
+             Height="400" Loaded="BaseControl_Loaded"
+    
              >
     <StackPanel>
         <Grid Margin="4">
@@ -208,6 +209,13 @@
                     Style="{StaticResource SubtitleTextBlockStyle}" />
             </StackPanel>
         </Grid>
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:ForecastControl ForecastInformation="{Binding WeatherInformation.Forecast.Weathers[0]}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackPanel>
     
     

@@ -15,6 +15,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -80,11 +81,49 @@ namespace DGP_Snap.Views
 
         public void SwitchRandomWallPaper()
         {
+            //DoubleAnimationUsingKeyFrames da = new DoubleAnimationUsingKeyFrames();
+            //EasingDoubleKeyFrame sd = new EasingDoubleKeyFrame(0, KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(1000)));
+            //da.KeyFrames.Add(sd);
+            //Storyboard.SetTargetName(da, WallPaperImage.Name);
+            //DependencyProperty[] propertyChain = new DependencyProperty[]
+            //{
+            //    OpacityProperty
+            //};
+            //Storyboard.SetTargetProperty(da, new PropertyPath("(0)", propertyChain));
+
+            //DoubleAnimationUsingKeyFrames da2 = new DoubleAnimationUsingKeyFrames
+            //{
+            //    BeginTime = new TimeSpan(0, 0, 0, 1, 5)
+            //};
+            //EasingDoubleKeyFrame sd2 = new EasingDoubleKeyFrame(1, KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(1200)));
+            //da2.KeyFrames.Add(sd2);
+            //Storyboard.SetTargetName(da2, WallPaperImage.Name);
+            //Storyboard.SetTargetProperty(da2, new PropertyPath("(0)", propertyChain));
+
+            //ObjectAnimationUsingKeyFrames oa = new ObjectAnimationUsingKeyFrames();
+            //DiscreteObjectKeyFrame diso = new DiscreteObjectKeyFrame();
+            //diso.Value= ImageUriCollection.GetRandom();
+            //oa.KeyFrames.Add(diso);
+            //oa.BeginTime = new TimeSpan(0, 0, 0, 1, 0);
+            //Storyboard.SetTargetName(oa, WallPaperImage.Name);
+            //DependencyProperty[] propertyChain2 = new DependencyProperty[]
+            //{
+                
+            //    Image.SourceProperty
+            //};
+            // Storyboard.SetTargetProperty(oa, new PropertyPath("(0)", propertyChain2));
+
+            //Storyboard bgstoryboard = new Storyboard();
+            //bgstoryboard.Children.Add(da);
+            //bgstoryboard.Children.Add(oa);
+            //bgstoryboard.Children.Add(da2);
+
             try
             {
+                //bgstoryboard.Begin();
                 CurrentImageUri = ImageUriCollection.GetRandom();
                 CurrentImageSource = new BitmapImage(CurrentImageUri);
-                CurrentImageDescription = WallPaperService.ImageDescriptionCollection[ListExtension.CurrentIndex]; 
+                CurrentImageDescription = WallPaperService.ImageDescriptionCollection[ListExtension.CurrentIndex];
             }
             catch
             {

@@ -133,6 +133,9 @@
     <Compile Include="Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WallPaperPage.xaml.cs">
+      <DependentUpon>WallPaperPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WeatherPage.xaml.cs">
       <DependentUpon>WeatherPage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,9 @@
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="Service\WallPaperService.cs" />
     <Compile Include="Service\WeatherInformationService.cs" />
+    <Compile Include="Views\ForecastControl.xaml.cs">
+      <DependentUpon>ForecastControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MottoView.xaml.cs">
       <DependentUpon>MottoView.xaml</DependentUpon>
     </Compile>
@@ -177,6 +183,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\WallPaperPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WeatherPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ForecastControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +244,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\ButterFont.ttf" />
     <Resource Include="Resources\Fonts\segmdl2.ttf" />
     <Resource Include="Resources\Fonts\msyhl.ttc" />
   </ItemGroup>

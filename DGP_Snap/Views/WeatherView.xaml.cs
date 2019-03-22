@@ -18,7 +18,7 @@ namespace DGP_Snap.Views
             //WeatherInformation.Forecast.Weathers = new List<Weather>();
             //WeatherInformation.Forecast.Weathers.Add(new Weather { Day = new WeatherDayHalf { State = "晴" } });
             InitializeComponent();
-            BaseControl.WeatherInformation = WeatherInformation;
+            //WeatherInformation = WeatherInformation;
         }
 
         public WeatherQueryModel WeatherInformation

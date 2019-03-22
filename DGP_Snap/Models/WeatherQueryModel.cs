@@ -57,7 +57,7 @@ namespace DGP_Snap.Models
     [XmlRoot(ElementName = "weather")]
     public class Weather
     {
-        public string _date;
+        private string _date;
         [XmlElement(ElementName = "date")] public string Date { get => _date; set => _date = value.Remove(value.IndexOf("星")); }//日期
         [XmlElement(ElementName = "high")] public string HighTemp { get; set; }//最高温度
         public double Double_HighTemp

@@ -63,7 +63,7 @@
                         </Slider.Triggers>-->
                     </Slider>
                     <Button Name="DownloadWallPaperButton" Margin="0" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="DownloadWallPaperButton_Click" Content="&#xE896;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
-                    <Button Name="SwitchWallPaperButton" Margin="0" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SwitchWallPaperButton_Click" Content="&#xEB9F;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
+                    <Button Name="SwitchWallPaperButton" Margin="0" Width="48" Height="48" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SwitchWallPaperButton_Click" Content="&#xE8BE;" Foreground="White" FontSize="16" FontFamily="{DynamicResource Icon_Font}"/>
                 </StackPanel>
             </Grid>
         </Grid>

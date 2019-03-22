@@ -22,7 +22,7 @@ namespace DGP_Snap.Service
         {
             List<Uri> imageUriCollection = new List<Uri>();
 
-            WallPaper360JsonObject wallPaper360JsonInfo =await WebRequestHelper.GetRequestImageInfoObjectAsync<WallPaper360JsonObject>(WallPaper360BasedUrL);//await GetRequest360WallPaperImageJsonInfoAsync();
+            Wallpaper360JsonObject wallPaper360JsonInfo =await WebRequestHelper.GetRequestImageInfoObjectAsync<Wallpaper360JsonObject>(WallPaper360BasedUrL);//await GetRequest360WallPaperImageJsonInfoAsync();
 
             foreach (DataItemFor360 dataItem in wallPaper360JsonInfo.Data)
             {
@@ -50,7 +50,7 @@ namespace DGP_Snap.Service
             string basedBingUrl = "http://cn.bing.com";
             List<Uri> imageSourceCollection = new List<Uri>();
 
-            BingImageJsonInfo bingImageJsonInfo = await WebRequestHelper.GetRequestImageInfoObjectAsync<BingImageJsonInfo>(WallPaperBingBasedUrL);
+            BingImageJsonObject bingImageJsonInfo = await WebRequestHelper.GetRequestImageInfoObjectAsync<BingImageJsonObject>(WallPaperBingBasedUrL);
 
             foreach (ImageItemForBing imageItemForBing in bingImageJsonInfo.Images)
             {
@@ -63,7 +63,7 @@ namespace DGP_Snap.Service
         {
             List<Uri> imageSourceCollection = new List<Uri>();
 
-            BaiduImageJsonInfo baiduImageJsonInfo = await WebRequestHelper.GetRequestImageInfoObjectAsync<BaiduImageJsonInfo>(WallPaperBaiduBasedUrL);
+            BaiduImageJsonObject baiduImageJsonInfo = await WebRequestHelper.GetRequestImageInfoObjectAsync<BaiduImageJsonObject>(WallPaperBaiduBasedUrL);
 
             foreach (ImgsItemForBaidu imageItemForBaidu in baiduImageJsonInfo.Imgs)
             {
